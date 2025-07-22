@@ -2,7 +2,7 @@ function RenderRankGraph(playerData) {
     let xValues = [];
     let yValues = [];
 
-    for (let i = 1; i < 31; i++) {
+    for (let i = 1; i < 52; i++) {
         const pastRanking = playerData.priorRanks[playerData.priorRanks.length - i];
         const pastRating = playerData.priorRatings[playerData.priorRatings.length - i];
         if (pastRating < 100)
@@ -92,7 +92,7 @@ function RenderRatingGraph(playerData) {
     let xValues = [];
     let yValues = [];
 
-    for (let i = 1; i < 32; i++) {
+    for (let i = 1; i < 52; i++) {
         const pastRating = playerData.priorRatings[playerData.priorRatings.length - i];
         if (pastRating < 100)
             break;
