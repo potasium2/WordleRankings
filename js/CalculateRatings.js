@@ -695,15 +695,17 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 64: Wordle #1494
-    potasium.DetermineRating(1, 9, 2, 4.2);
-    juanfan.DetermineRating(1, 9, 2, 4.2);
-    aidan.DetermineRating(3, 9, 3, 4.2);
-    lucy.DetermineRating(3, 9, 3, 4.2);
-    creeper.DetermineRating(5, 9, 4, 4.2);
-    nyfen.DetermineRating(5, 9, 4, 4.2);
-    squiddy.DetermineRating(5, 9, 4, 4.2);
-    stano.DetermineRating(5, 9, 4, 4.2);
-    lightning.DetermineRating(9, 9, 5, 4.2);
+    potasium.DetermineRating(1, 11, 2, 4.2);
+    juanfan.DetermineRating(1, 11, 2, 4.2);
+    aidan.DetermineRating(3, 11, 3, 4.2);
+    lucy.DetermineRating(3, 11, 3, 4.2);
+    creeper.DetermineRating(5, 11, 4, 4.2);
+    lilli.DetermineRating(5, 11, 4, 4.2);
+    nyfen.DetermineRating(5, 11, 4, 4.2);
+    panda.DetermineRating(5, 11, 4, 4.2);
+    squiddy.DetermineRating(5, 11, 4, 4.2);
+    stano.DetermineRating(5, 11, 4, 4.2);
+    lightning.DetermineRating(11, 11, 5, 4.2);
     SaveRankings();
 
     return 64 - 14;
