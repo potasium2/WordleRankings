@@ -28,7 +28,7 @@ function CreateTableRow(player, rank, currentDay) {
 
     const wordleRating = document.createElement("td");
     wordleRating.setAttribute("class", "playerRankingInfo");
-    wordleRating.setAttribute("id", "performancePoints");
+    wordleRating.setAttribute("id", "wordleRating");
     wordleRating.textContent = Math.round(player.rating) + "wr";
 
     const heldRankOne = document.createElement("td");

@@ -47,7 +47,7 @@ tr {
 }
 
 .playerListing:hover {
-    background-color: #505050;
+    background-color: #505570;
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ tr {
     color: #fdfdfd;
 }
 
-#performancePoints {
+#wordleRating {
     color: #e0e0e0;
     width: 15%;
 }
@@ -79,7 +79,7 @@ tr {
     width: 35%;
 }
 
-#performancePointsHeader {
+#wordleRatingHeader {
     color: white;
     width: 15%;
 }
