@@ -1,0 +1,113 @@
+* {
+    font-family: arial;
+    color: #dddddd;
+}
+
+body {
+    background-color: #171717;
+}
+
+#playerInformationContainer {
+    background-color: #3f3f3f;
+    margin: auto;
+    margin-top: 20px;
+    width: 65%;
+    padding-bottom: 15px;
+    box-shadow: 0px 0px 5px 2px #2d2d2d;
+}
+
+#playerProfilePicture {
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-right: 8px;
+    width: 176px;
+    height: 176px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.headingInformation {
+    margin-left: 224px;
+    margin-top: -58px;
+}
+
+#playerName {
+    color: white;
+    font-size: 32px;
+}
+
+.playerInformationStats {
+    color: white;
+}
+
+.playerRankInfoContainer {
+    border-top-right-radius: 5px;
+    width: 70%;
+    margin-top: 0px;
+    background-color: #515151;
+    height: 140px;
+    display: flex;
+}
+
+.playerRankInfo {
+    margin-left: 20px;
+}
+
+.rankText{
+    font-size: 24px;
+    color: white;
+}
+
+.rankValue{
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    margin-top: -20px;
+}
+
+.currentRating{
+    text-align: center;
+    font-size: 36px;
+    color: #a8d8d8;
+    margin-top: -20px;
+}
+
+.peakRating{
+    text-align: center;
+    font-size: 36px;
+    color: #d68c88;
+    margin-top: -20px;
+}
+
+#rankGraph {
+    background-color: #515151;
+    max-width: 70%;
+    max-height: 180px;
+    border-bottom-right-radius: 5px;
+}
+
+#ratingGraph {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    float: right;
+    max-width: 25%;
+    max-height: 220px;
+    background-color: #516171;
+    margin-top: -276px;
+    display: grid;
+    border-spacing: 8px;
+    align-items: center;
+}
+
+.scoresInfo {
+    margin: auto;
+    width: 97.5%;
+    border-radius: 5px;
+    background-color: #515151;
+}
+
+.scoreRank {
+    width: 48px;
+    height: 24px;
+    margin: auto;
+}

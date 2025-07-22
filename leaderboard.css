@@ -1,0 +1,100 @@
+* {
+    font-family: arial;
+}
+
+body {
+    background-color: #aeaeae;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+tr {
+    margin-top: 20px;
+}
+
+#playerListingContainer {
+    width: 45%;
+    border-radius: 10px;
+    background-color: #5a5a5a;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.playerListingHeader {
+    color: white;
+    display: table;
+    margin: auto;
+    width: 97.5%;
+    border-radius: 5px;
+    height: auto;
+    transition: 0.5s all;
+    margin-top: 5px;
+}
+
+.playerListing {
+    display: table;
+    margin: auto;
+    width: 97.5%;
+    background-color: #404040;
+    border-radius: 5px;
+    height: auto;
+    transition: 0.5s all;
+    margin-top: 5px;
+}
+
+.playerListing:hover {
+    background-color: #505050;
+    cursor: pointer;
+}
+
+#rankingNumber {
+    color: white;
+    padding-left: 12px;
+    width: 5%;
+}
+
+#playerName {
+    color: #fdfdfd;
+}
+
+#performancePoints {
+    color: #e0e0e0;
+    width: 15%;
+}
+
+#heldNumberOne {
+    color: #e0e0e0;
+    width: 15%;
+}
+
+#rankChange {
+    width: 5%;
+}
+
+.playerIcons {
+    width: 35%;
+}
+
+#performancePointsHeader {
+    color: white;
+    width: 15%;
+}
+
+#heldNumberOneHeader {
+    width: 15%;
+}
+
+#playerIcon {
+    margin-left: 4px;
+    margin-top: 6px;
+    margin-right: 8px;
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 5px;
+    float: left;
+}
