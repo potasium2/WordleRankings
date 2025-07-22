@@ -2,7 +2,7 @@ import { Player } from "./Player.js";
 
 const startingBase = 0;
 // Joined Day 1
-const daphne = new Player("daph", startingBase);
+const daphne = new Player("Daph", startingBase);
 
 // Joined Day 2
 const lilli = new Player("Lilli 🅱️", startingBase);
