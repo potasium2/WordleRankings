@@ -63,7 +63,7 @@ function CreateTableRow(player, rank, currentDay) {
 }
 
 function CompareCurrentRank(player, currentDay) {
-    const rankLastMonth = player.priorRanks[currentDay - 7];
+    const rankLastMonth = player.priorRanks[currentDay - 14];
     const currentRank = player.priorRanks[currentDay - 1];
     console.log(currentRank);
     return rankLastMonth - currentRank;
