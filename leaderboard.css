@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #405577;
+    background-color: #404040;
 }
 
 table {
@@ -17,7 +17,7 @@ tr {
 #playerListingContainer {
     width: 45%;
     border-radius: 10px;
-    background-color: #506688;
+    background-color: #606060;
     margin: auto;
     margin-top: 20px;
     padding-top: 10px;
@@ -46,7 +46,7 @@ tr {
 }
 
 .playerListing:hover {
-    background-color: #505570;
+    background-color: #a8a8a8 !important;
     cursor: pointer;
 }
 

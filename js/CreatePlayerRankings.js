@@ -3,6 +3,8 @@ const TABLE = document.getElementById("playerListingBody");
 function CreateTableRow(player, rank, currentDay) {
     const accent = player.accentColor.substring(1)
     const luma = GetAccentLuminosity(parseInt(accent, 16));
+    const shiftedAccent = ShiftAccentColor(parseInt(accent, 16), 20)
+
     let accentBase = "#fdfdfd"
     let rankUpAccent = "#33dd22"
     let rankDownAccent = "#dd2233"
@@ -87,9 +89,24 @@ function GetAccentLuminosity(accentRGB) {
     return 0.22 * red + 0.715 * green + 0.072 * blue;
 }
 
+function ShiftAccentColor(accentRGB, shift) {
+    const red = (accentRGB >> 16) & 0xff;
+    const green = (accentRGB >> 8) & 0xff;
+    const blue = accentRGB & 0xff;
+
+    let shiftedRed = Math.min(Math.max(1, (red + shift)), 255).toString(16);
+    let shiftedGreen = Math.min(Math.max(1, (green + shift)), 255).toString(16);
+    let shiftedBlue = Math.min(Math.max(1, (blue + shift)), 255).toString(16);
+
+    shiftedRed = shiftedRed.length < 2 ? "0" + shiftedRed : shiftedRed;
+    shiftedGreen = shiftedGreen.length < 2 ? "0" + shiftedGreen : shiftedGreen;
+    shiftedBlue = shiftedBlue.length < 2 ? "0" + shiftedBlue : shiftedBlue;
+    return "#" + shiftedRed + shiftedGreen + shiftedBlue;
+}
+
 function CompareCurrentRank(player, currentDay) {
     const rankLastMonth = player.priorRanks[currentDay - 14];
-    const currentRank = player.priorRanks[currentDay - 1];
+    const currentRank = player.priorRanks[currentDay];
     console.log(currentRank);
     return rankLastMonth - currentRank;
 }
