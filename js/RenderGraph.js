@@ -18,7 +18,7 @@ function RenderRankGraph(playerData) {
             labels: xValues,
             datasets: [{
             data: yValues,
-            borderColor: "grey",
+            borderColor: playerData.accentColor,
             fill: false,
             pointRadius: 0.01,
             cubicInterpolationMode: 'linear',
@@ -107,7 +107,7 @@ function RenderRatingGraph(playerData) {
             labels: xValues,
             datasets: [{
             data: yValues,
-            borderColor: "lightblue",
+            borderColor: playerData.accentColor,
             fill: false,
             pointRadius: 0.01,
             cubicInterpolationMode: 'linear',

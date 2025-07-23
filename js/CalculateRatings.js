@@ -27,12 +27,12 @@ const panda = new Player("olimar sigma", startingBase);
 const stano = new Player("Stanovacuum", startingBase);
 
 // Joined Day 22-24
-const potasium = new Player("Lifeline", startingBase);
+const potasium = new Player("Lifeline", startingBase, "#002394");
 const crackbox = new Player("crackbox", startingBase);
 const mario = new Player("the plerg", startingBase);
 
 // Joined Day 28
-const creeper = new Player("Creeperman495", startingBase);
+const creeper = new Player("Creeperman495", startingBase, "#228b22");
 
 // Joined Day 32
 const fletch = new Player("Fletchling", startingBase);
@@ -40,7 +40,7 @@ const ghostcowz = new Player("Ghostcowz", startingBase);
 
 // Joined Day 48-49
 const dingus = new Player("Dingus", startingBase);
-const nyfen = new Player("Nyfen", startingBase);
+const nyfen = new Player("Nyfen", startingBase, "#f08080");
 
 // Joined Day 54-55
 const juanfan = new Player("juanfan1", startingBase);

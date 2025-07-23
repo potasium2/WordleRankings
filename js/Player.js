@@ -1,7 +1,8 @@
 class Player {
-    constructor(name, rating) {
+    constructor(name, rating, accentColor = "#607799") {
         this.name = name;
         this.rating = rating;
+        this.accentColor = accentColor;
         this.peakRating = rating;
         this.timesTakenFirst = 0;
         this.priorRanks = [];

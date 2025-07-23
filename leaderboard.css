@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #aeaeae;
+    background-color: #405577;
 }
 
 table {
@@ -17,7 +17,7 @@ tr {
 #playerListingContainer {
     width: 45%;
     border-radius: 10px;
-    background-color: #5a5a5a;
+    background-color: #506688;
     margin: auto;
     margin-top: 20px;
     padding-top: 10px;
@@ -39,7 +39,6 @@ tr {
     display: table;
     margin: auto;
     width: 97.5%;
-    background-color: #404040;
     border-radius: 5px;
     height: auto;
     transition: 0.5s all;
@@ -52,7 +51,6 @@ tr {
 }
 
 #rankingNumber {
-    color: white;
     padding-left: 12px;
     width: 5%;
 }

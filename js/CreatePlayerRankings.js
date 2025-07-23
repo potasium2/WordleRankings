@@ -1,13 +1,27 @@
 const TABLE = document.getElementById("playerListingBody");
 
 function CreateTableRow(player, rank, currentDay) {
+    const accent = player.accentColor.substring(1)
+    const luma = GetAccentLuminosity(parseInt(accent, 16));
+    let accentBase = "#fdfdfd"
+    let rankUpAccent = "#33dd22"
+    let rankDownAccent = "#dd2233"
+
+    if (luma > 128) {
+        accentBase = "#404040";
+        rankUpAccent = "#337722";
+        rankDownAccent = "#772233";
+    }
+
     const tableListing = document.createElement("tr");
     tableListing.setAttribute("class", "playerListing");
+    tableListing.setAttribute("style", "background-color:" + player.accentColor);
     tableListing.setAttribute("onclick", "location.href='playerpage.html?playerName=" + player.name + "'")
 
     const rankingNumber = document.createElement("td");
     rankingNumber.setAttribute("class", "playerRankingInfo")
     rankingNumber.setAttribute("id", "rankingNumber")
+    rankingNumber.setAttribute("style", "color:" + accentBase);
     rankingNumber.textContent = "#" + rank;
 
     const rankChange = document.createElement("td");
@@ -18,22 +32,24 @@ function CreateTableRow(player, rank, currentDay) {
 
     if (rankDifference > 0) {
         rankChange.innerHTML = "🠅" + rankDifference;
-        rankChange.setAttribute("style", "color:#33dd22")
+        rankChange.setAttribute("style", "color:" + rankUpAccent)
     }
 
     if (rankDifference < 0) {
         rankChange.innerHTML = "🠇" + Math.abs(rankDifference);
-        rankChange.setAttribute("style", "color:#dd2233")
+        rankChange.setAttribute("style", "color:" + rankDownAccent)
     }
 
     const wordleRating = document.createElement("td");
     wordleRating.setAttribute("class", "playerRankingInfo");
     wordleRating.setAttribute("id", "wordleRating");
+    wordleRating.setAttribute("style", "color:" + accentBase);
     wordleRating.textContent = Math.round(player.rating) + "wr";
 
     const heldRankOne = document.createElement("td");
     heldRankOne.setAttribute("class", "playerRankingInfo");
     heldRankOne.setAttribute("id", "heldNumberOne");
+    heldRankOne.setAttribute("style", "color:" + accentBase);
     heldRankOne.textContent = player.timesTakenFirst;
 
     const playerIcon = document.createElement("td");
@@ -48,6 +64,7 @@ function CreateTableRow(player, rank, currentDay) {
     const playerName = document.createElement("p");
     playerName.setAttribute("class", "playerRankingInfo");
     playerName.setAttribute("id", "playerName");
+    playerName.setAttribute("style", "color:" + accentBase);
     playerName.textContent = player.name;
 
     playerIcon.appendChild(playerImage);
@@ -60,6 +77,14 @@ function CreateTableRow(player, rank, currentDay) {
     tableListing.appendChild(heldRankOne);
 
     return tableListing;
+}
+
+function GetAccentLuminosity(accentRGB) {
+    const red = (accentRGB >> 16) & 0xff;
+    const green = (accentRGB >> 8) & 0xff;
+    const blue = accentRGB & 0xff;
+
+    return 0.22 * red + 0.715 * green + 0.072 * blue;
 }
 
 function CompareCurrentRank(player, currentDay) {
