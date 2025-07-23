@@ -2,17 +2,22 @@ const TABLE = document.getElementById("playerListingBody");
 
 function CreateTableRow(player, rank, currentDay) {
     const accent = player.accentColor.substring(1)
-    const luma = GetAccentLuminosity(parseInt(accent, 16));
-    const shiftedAccent = ShiftAccentColor(parseInt(accent, 16), 20)
+    const accentRGB = parseInt(accent, 16);
+    const luma = GetAccentLuminosity(accentRGB);
+    const shiftedAccent = ShiftAccentColor(parseInt(accent, 16), 20);
 
-    let accentBase = "#fdfdfd"
-    let rankUpAccent = "#33dd22"
-    let rankDownAccent = "#dd2233"
+    let accentBase = "#fdfdfd";
+    let rankUpAccent = "#33dd22";
+    let rankDownAccent = "#dd2233";
 
-    if (luma > 128) {
-        accentBase = "#404040";
+    if(((accentRGB >> 16) & 0xff) > 127 && ((accentRGB >> 0) & 0xff) > 195) {
+        rankDownAccent = "#772233";
+    }
+
+    if (luma > 127) {
         rankUpAccent = "#337722";
         rankDownAccent = "#772233";
+        accentBase = "#404040";
     }
 
     const tableListing = document.createElement("tr");

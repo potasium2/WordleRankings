@@ -2,53 +2,53 @@ import { Player } from "./Player.js";
 
 const startingBase = 0;
 // Joined Day 1
-const daphne = new Player("Daph", startingBase);
+const daphne = new Player("Daph", startingBase, "#a040c0");
 
 // Joined Day 2
-const lilli = new Player("Lilli 🅱️", startingBase, "#d734b1");
-const jude = new Player("JudeSCM", startingBase);
-const lucy = new Player("lucy", startingBase, "#621181");
-const delta = new Player("juanfanl", startingBase);
-const aidan = new Player("Aidan", startingBase);
+const lilli = new Player("Lilli 🅱️", startingBase, "#f080f0");
+const jude = new Player("JudeSCM", startingBase, "#40d070");
+const lucy = new Player("lucy", startingBase, "#a060b0");
+const delta = new Player("juanfanl", startingBase, "#8010a0");
+const aidan = new Player("Aidan", startingBase, "#a060f0");
 
 // Joined Day 3
-const khana = new Player("KHANA", startingBase);
-const squiddy = new Player("Squiddy", startingBase, "#c87d33");
-const rukir = new Player("Rukir", startingBase);
+const khana = new Player("KHANA", startingBase, "#f0f0a0");
+const squiddy = new Player("Squiddy", startingBase, "#f0a040");
+const rukir = new Player("Rukir", startingBase, "#2060f0");
 
 // Joined Day 9
-const lightning = new Player("ThatLightningBoltPerson", startingBase, "#d988c6");
+const lightning = new Player("ThatLightningBoltPerson", startingBase, "#f080c0");
 
 // Joined Day 14
-const lobsterfighter = new Player("lobsterfighter", startingBase);
+const lobsterfighter = new Player("lobsterfighter", startingBase, "#b01030");
 
 // Joined Day 16-17
-const panda = new Player("olimar sigma", startingBase, "#5936a3");
-const stano = new Player("Stanovacuum", startingBase, "#a61347");
+const panda = new Player("olimar sigma", startingBase, "#a080f0");
+const stano = new Player("Stanovacuum", startingBase, "#a00040");
 
 // Joined Day 22-24
-const potasium = new Player("Lifeline", startingBase, "#002394");
-const crackbox = new Player("crackbox", startingBase);
-const mario = new Player("the plerg", startingBase);
+const potasium = new Player("Lifeline", startingBase, "#a0a0c0");
+const crackbox = new Player("crackbox", startingBase, "#a0a0a0");
+const mario = new Player("the plerg", startingBase, "#f05050");
 
 // Joined Day 28
-const creeper = new Player("Creeperman495", startingBase, "#228b22");
+const creeper = new Player("Creeperman495", startingBase, "#80f080");
 
 // Joined Day 32
-const fletch = new Player("Fletchling", startingBase, "#304cf7");
-const ghostcowz = new Player("Ghostcowz", startingBase);
+const fletch = new Player("Fletchling", startingBase, "#3040f0");
+const ghostcowz = new Player("Ghostcowz", startingBase, "#8080f0");
 
 // Joined Day 48-49
-const dingus = new Player("Dingus", startingBase);
-const nyfen = new Player("Nyfen", startingBase, "#ff3737");
+const dingus = new Player("Dingus", startingBase, "#f0a080");
+const nyfen = new Player("Nyfen", startingBase, "#f04050");
 
 // Joined Day 54-55
 const juanfan = new Player("juanfan1", startingBase, "#56a677");
-const nidgey = new Player("Nidgey", startingBase);
-const april = new Player("Bunpril", startingBase, "#76b4d8");
+const nidgey = new Player("Nidgey", startingBase, "#801010");
+const april = new Player("Bunpril", startingBase, "#80f0f0");
 
 // Joined Day 57
-const ben = new Player("BenHeck", startingBase);
+const ben = new Player("BenHeck", startingBase, "#a04010");
 
 const playersArr = [
     daphne,
@@ -695,21 +695,38 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 64: Wordle #1494
-    potasium.DetermineRating(1, 12, 2, 4.2);
-    juanfan.DetermineRating(1, 12, 2, 4.2);
-    aidan.DetermineRating(3, 12, 3, 4.2);
-    fletch.DetermineRating(3, 12, 3, 4.2)
-    lucy.DetermineRating(3, 12, 3, 4.2);
-    creeper.DetermineRating(6, 12, 4, 4.2);
-    lilli.DetermineRating(6, 12, 4, 4.2);
-    nyfen.DetermineRating(6, 12, 4, 4.2);
-    panda.DetermineRating(6, 12, 4, 4.2);
-    squiddy.DetermineRating(6, 12, 4, 4.2);
-    stano.DetermineRating(6, 12, 4, 4.2);
-    lightning.DetermineRating(12, 12, 5, 4.2);
+    potasium.DetermineRating(1, 12, 2, 3.9);
+    juanfan.DetermineRating(1, 12, 2, 3.9);
+    aidan.DetermineRating(3, 12, 3, 3.9);
+    fletch.DetermineRating(3, 12, 3, 3.9)
+    lucy.DetermineRating(3, 12, 3, 3.9);
+    creeper.DetermineRating(6, 12, 4, 3.9);
+    lilli.DetermineRating(6, 12, 4, 3.9);
+    nyfen.DetermineRating(6, 12, 4, 3.9);
+    panda.DetermineRating(6, 12, 4, 3.9);
+    squiddy.DetermineRating(6, 12, 4, 3.9);
+    stano.DetermineRating(6, 12, 4, 3.9);
+    lightning.DetermineRating(12, 12, 5, 3.9);
     SaveRankings();
 
-    return 64 - 14;
+    // Day 65: Wordle #1495 - WATER
+    lucy.DetermineRating(1, 13, 3, 4.7);
+    creeper.DetermineRating(1, 13, 3, 4.7);
+    fletch.DetermineRating(3, 13, 4, 4.7);
+    lilli.DetermineRating(4, 13, 5, 4.7);
+    khana.DetermineRating(4, 13, 5, 4.7);
+    panda.DetermineRating(4, 13, 5, 4.7);
+    april.DetermineRating(7, 13, 6, 4.7);
+    aidan.DetermineRating(8, 13, 7, 4.7);
+    juanfan.DetermineRating(8, 13, 7, 4.7);
+    nidgey.DetermineRating(8, 13, 7, 4.7);
+    nyfen.DetermineRating(8, 13, 7, 4.7);
+    potasium.DetermineRating(8, 13, 7, 4.7);
+    squiddy.DetermineRating(8, 13, 7, 4.7); 
+    SaveRankings();
+
+
+    return 65 - 14;
 }
 
 export { CalculateRatings, playersArr }

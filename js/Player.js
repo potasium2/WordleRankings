@@ -15,11 +15,13 @@ class Player {
 
         this.timesTakenFirst = scorePosition == 1 ? this.timesTakenFirst + 1 : this.timesTakenFirst;
 
-        if (guessCount >= 7)
+        if (guessCount >= 7) {
             this.rating -= Math.round(wordDifficulty * Math.pow(guessCount / 3.0, 1.65));
+        }
 
-        if (guessCount == 1)
+        if (guessCount == 1) {
             this.rating += 8.0 + Math.round(wordDifficulty * 2.0);
+        }
 
         const eloScaling = Math.min(Math.max(Math.pow(this.rating / 1000.0, 7.0), 1.0), 25.0);
         const firstPlaceBonus = Math.min(Math.max(1500.0 / this.rating, 1.0), 1.875);
