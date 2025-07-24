@@ -1,14 +1,26 @@
 const TABLE = document.getElementById("playerListingBody");
+let rank = 0;
 
-function CreateTableRow(player, rank, currentDay) {
-    const accent = player.accentColor.substring(1)
+function CreateTableRow(player, currentDay) {
+    let accent = "607090"; // player.accentColor.substring(1)
     const accentRGB = parseInt(accent, 16);
     const luma = GetAccentLuminosity(accentRGB);
-    const shiftedAccent = ShiftAccentColor(parseInt(accent, 16), 20);
+    // const shiftedAccent = ShiftAccentColor(parseInt(accent, 16), 20);
+    if (player.priorRanks.length > 61) {
+        if (player.rating == player.priorRatings[currentDay - 60])
+            return document.createElement("div");
+    }
+    
+    if (player.priorRanks.length > 31) {
+        if (player.rating == player.priorRatings[currentDay - 30])
+            accent = "808080";
+    }
+
+    rank++;
 
     let accentBase = "#fdfdfd";
     let rankUpAccent = "#33dd22";
-    let rankDownAccent = "#dd2233";
+    let rankDownAccent = "#772233";
 
     if(((accentRGB >> 16) & 0xff) > 127 && ((accentRGB >> 0) & 0xff) > 195) {
         rankDownAccent = "#772233";
@@ -22,7 +34,7 @@ function CreateTableRow(player, rank, currentDay) {
 
     const tableListing = document.createElement("tr");
     tableListing.setAttribute("class", "playerListing");
-    tableListing.setAttribute("style", "background-color:" + player.accentColor);
+    tableListing.setAttribute("style", "background-color:#" + accent);
     tableListing.setAttribute("onclick", "location.href='playerpage.html?playerName=" + player.name + "'")
 
     const rankingNumber = document.createElement("td");
@@ -117,10 +129,8 @@ function CompareCurrentRank(player, currentDay) {
 }
 
 function CreateRankingsTable(playersArr, currentDay) {
-    let rank = 0;
     playersArr.forEach(player => {
-        rank++;
-        TABLE.appendChild(CreateTableRow(player, rank, currentDay));
+        TABLE.appendChild(CreateTableRow(player, currentDay));
     });
 }
 

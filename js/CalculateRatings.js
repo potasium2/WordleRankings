@@ -709,24 +709,41 @@ function CalculateRatings() {
     lightning.DetermineRating(12, 12, 5, 3.9);
     SaveRankings();
 
-    // Day 65: Wordle #1495 - WATER
-    lucy.DetermineRating(1, 13, 3, 4.7);
-    creeper.DetermineRating(1, 13, 3, 4.7);
-    fletch.DetermineRating(3, 13, 4, 4.7);
-    lilli.DetermineRating(4, 13, 5, 4.7);
-    khana.DetermineRating(4, 13, 5, 4.7);
-    panda.DetermineRating(4, 13, 5, 4.7);
-    april.DetermineRating(7, 13, 6, 4.7);
-    aidan.DetermineRating(8, 13, 7, 4.7);
-    juanfan.DetermineRating(8, 13, 7, 4.7);
-    nidgey.DetermineRating(8, 13, 7, 4.7);
-    nyfen.DetermineRating(8, 13, 7, 4.7);
-    potasium.DetermineRating(8, 13, 7, 4.7);
-    squiddy.DetermineRating(8, 13, 7, 4.7); 
+    // Day 65: Wordle #1495 - the water incident
+    rukir.DetermineRating(1, 15, 1, 5.2);
+    delta.DetermineRating(2, 15, 3, 4.7);
+    lucy.DetermineRating(2, 15, 3, 4.7);
+    creeper.DetermineRating(2, 15, 3, 4.7);
+    fletch.DetermineRating(5, 15, 4, 4.7);
+    lilli.DetermineRating(6, 15, 5, 4.7);
+    khana.DetermineRating(6, 15, 5, 4.7);
+    panda.DetermineRating(6, 15, 5, 4.7);
+    april.DetermineRating(9, 15, 6, 4.7);
+    aidan.DetermineRating(10, 15, 7, 4.7);
+    juanfan.DetermineRating(10, 15, 7, 4.7);
+    nidgey.DetermineRating(10, 15, 7, 4.7);
+    nyfen.DetermineRating(10, 15, 7, 4.7);
+    potasium.DetermineRating(10, 15, 7, 4.7);
+    squiddy.DetermineRating(10, 15, 7, 4.7);
     SaveRankings();
 
+    // Day 66: Wordle #1496
+    april.DetermineRating(1, 13, 4, 5.2);
+    aidan.DetermineRating(1, 13, 4, 5.2);
+    lucy.DetermineRating(1, 13, 4, 5.2);
+    panda.DetermineRating(1, 13, 4, 5.2);
+    delta.DetermineRating(1, 13, 4, 5.2);
+    creeper.DetermineRating(6, 13, 5, 5.2);
+    khana.DetermineRating(6, 13, 5, 5.2);
+    nyfen.DetermineRating(6, 13, 5, 5.2);
+    potasium.DetermineRating(6, 13, 5, 5.2);
+    squiddy.DetermineRating(10, 13, 6, 5.2);
+    juanfan.DetermineRating(10, 13, 6, 5.2);
+    stano.DetermineRating(10, 13, 6, 5.2);
+    rukir.DetermineRating(13, 13, 7, 5.2);
+    SaveRankings();
 
-    return 65 - 14;
+    return 66 - 14;
 }
 
 export { CalculateRatings, playersArr }

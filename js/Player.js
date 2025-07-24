@@ -17,6 +17,7 @@ class Player {
 
         if (guessCount >= 7) {
             this.rating -= Math.round(wordDifficulty * Math.pow(guessCount / 3.0, 1.65));
+            playerCount = scorePosition;
         }
 
         if (guessCount == 1) {
