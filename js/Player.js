@@ -25,12 +25,12 @@ class Player {
         const scalingFactor = 5.0;
         const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, 1000.0 / this.rating));
 
-        const positionBonus = (-Math.pow(positionScalingFactor * (10.0 / 3.0) * (scorePosition / playerCount), 0.825)) + 8.0;
-        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : -Math.pow(wordDifficulty - guessCount, 2.0) / 2.0;
-        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow((playerCount / 6.0) - scorePosition / 2.0, 2.0) : 0;
+        const positionBonus = (-Math.pow(positionScalingFactor * (10.0 / 3.0) * (scorePosition / playerCount), 0.825)) + 7.5;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
+        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow((playerCount / 3.0) - scorePosition / 2.0, 2.0) : 0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
-        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.245) * (positionBonus + guessBonus) : overallBonus;
+        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.13165) * (positionBonus + guessBonus) : overallBonus;
 
         this.rating += Math.round(overallBonus) - Math.max(0, eloScaling - 1) - positionPenalty;
 
