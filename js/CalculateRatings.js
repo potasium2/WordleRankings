@@ -746,16 +746,18 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 67: Wordle #1497
-    potasium.DetermineRating(1, 10, 3, 4.6);
-    juanfan.DetermineRating(2, 10, 4, 4.6);
-    khana.DetermineRating(2, 10, 4, 4.6);
-    aidan.DetermineRating(4, 10, 5, 4.6);
-    april.DetermineRating(4, 10, 5, 4.6);
-    stano.DetermineRating(6, 10, 6, 4.6);
-    squiddy.DetermineRating(6, 10, 6, 4.6);
-    lucy.DetermineRating(6, 10, 6, 4.6);
-    delta.DetermineRating(9, 10, 6, 4.6);
-    nyfen.DetermineRating(10, 109, 7, 4.6);
+    potasium.DetermineRating(1, 12, 3, 5.6);
+    juanfan.DetermineRating(2, 12, 4, 5.6);
+    khana.DetermineRating(2, 12, 4, 5.6);
+    aidan.DetermineRating(4, 12, 5, 5.6);
+    april.DetermineRating(4, 12, 5, 5.6);
+    delta.DetermineRating(4, 12, 5, 5.6);
+    fletch.DetermineRating(7, 12, 6, 5.6);
+    lucy.DetermineRating(7, 12, 6, 5.6);
+    mario.DetermineRating(7, 12, 6, 5.6);
+    squiddy.DetermineRating(7, 12, 6, 5.6);
+    stano.DetermineRating(7, 12, 6, 5.6);
+    nyfen.DetermineRating(12, 12, 7, 5.6);
     SaveRankings();
 
     return 68 - 14;
