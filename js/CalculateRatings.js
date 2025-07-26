@@ -728,22 +728,37 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 66: Wordle #1496
-    april.DetermineRating(1, 13, 4, 5.2);
-    aidan.DetermineRating(1, 13, 4, 5.2);
-    lucy.DetermineRating(1, 13, 4, 5.2);
-    panda.DetermineRating(1, 13, 4, 5.2);
-    delta.DetermineRating(1, 13, 4, 5.2);
-    creeper.DetermineRating(6, 13, 5, 5.2);
-    khana.DetermineRating(6, 13, 5, 5.2);
-    nyfen.DetermineRating(6, 13, 5, 5.2);
-    potasium.DetermineRating(6, 13, 5, 5.2);
-    squiddy.DetermineRating(10, 13, 6, 5.2);
-    juanfan.DetermineRating(10, 13, 6, 5.2);
-    stano.DetermineRating(10, 13, 6, 5.2);
-    rukir.DetermineRating(13, 13, 7, 5.2);
+    fletch.DetermineRating(1, 15, 3, 4.4);
+    lightning.DetermineRating(1, 15, 3, 4.4);
+    april.DetermineRating(3, 15, 4, 4.4);
+    aidan.DetermineRating(3, 15, 4, 4.4);
+    lucy.DetermineRating(3, 15, 4, 4.4);
+    panda.DetermineRating(3, 15, 4, 4.4);
+    delta.DetermineRating(3, 15, 4, 4.4);
+    creeper.DetermineRating(8, 15, 5, 4.4);
+    khana.DetermineRating(8, 15, 5, 4.4);
+    nyfen.DetermineRating(8, 15, 5, 4.4);
+    potasium.DetermineRating(8, 15, 5, 4.4);
+    squiddy.DetermineRating(12, 15, 6, 4.4);
+    juanfan.DetermineRating(12, 15, 6, 4.4);
+    stano.DetermineRating(12, 15, 6, 4.4);
+    rukir.DetermineRating(15, 15, 7, 4.4);
     SaveRankings();
 
-    return 66 - 14;
+    // Day 67: Wordle #1497
+    potasium.DetermineRating(1, 10, 3, 4.6);
+    juanfan.DetermineRating(2, 10, 4, 4.6);
+    khana.DetermineRating(2, 10, 4, 4.6);
+    aidan.DetermineRating(4, 10, 5, 4.6);
+    april.DetermineRating(4, 10, 5, 4.6);
+    stano.DetermineRating(6, 10, 6, 4.6);
+    squiddy.DetermineRating(6, 10, 6, 4.6);
+    lucy.DetermineRating(6, 10, 6, 4.6);
+    delta.DetermineRating(9, 10, 6, 4.6);
+    nyfen.DetermineRating(10, 109, 7, 4.6);
+    SaveRankings();
+
+    return 68 - 14;
 }
 
 export { CalculateRatings, playersArr }
