@@ -760,6 +760,19 @@ function CalculateRatings() {
     nyfen.DetermineRating(12, 12, 7, 5.6);
     SaveRankings();
 
+    // Day 68: Wordle #1498
+    khana.DetermineRating(1, 10, 1, 3.8);
+    aidan.DetermineRating(2, 10, 2, 3.8);
+    potasium.DetermineRating(2, 10, 2, 3.8);
+    lucy.DetermineRating(4, 10, 3, 3.8);
+    squiddy.DetermineRating(4, 10, 3, 3.8);
+    delta.DetermineRating(6, 10, 4, 3.8);
+    juanfan.DetermineRating(6, 10, 4, 3.8);
+    stano.DetermineRating(6, 10, 4, 3.8);
+    april.DetermineRating(9, 10, 6, 3.8);
+    nyfen.DetermineRating(9, 10, 6, 3.8);
+    SaveRankings();
+
     return 68 - 14;
 }
 
