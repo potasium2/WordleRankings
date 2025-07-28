@@ -761,19 +761,55 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 68: Wordle #1498
-    khana.DetermineRating(1, 10, 1, 3.8);
-    aidan.DetermineRating(2, 10, 2, 3.8);
-    potasium.DetermineRating(2, 10, 2, 3.8);
-    lucy.DetermineRating(4, 10, 3, 3.8);
-    squiddy.DetermineRating(4, 10, 3, 3.8);
-    delta.DetermineRating(6, 10, 4, 3.8);
-    juanfan.DetermineRating(6, 10, 4, 3.8);
-    stano.DetermineRating(6, 10, 4, 3.8);
-    april.DetermineRating(9, 10, 6, 3.8);
-    nyfen.DetermineRating(9, 10, 6, 3.8);
+    khana.DetermineRating(0, 0, 0, 4.3, true);
+    aidan.DetermineRating(1, 12, 2, 4.3);
+    potasium.DetermineRating(1, 12, 2, 4.3);
+    lucy.DetermineRating(3, 12, 3, 4.3);
+    squiddy.DetermineRating(3, 12, 3, 4.3);
+    fletch.DetermineRating(3, 12, 3, 4);
+    delta.DetermineRating(6, 12, 4, 4.3);
+    juanfan.DetermineRating(6, 12, 4, 4.3);
+    stano.DetermineRating(6, 12, 4, 4.3);
+    creeper.DetermineRating(9, 12, 5, 4.3);
+    april.DetermineRating(10, 12, 6, 4.3);
+    nyfen.DetermineRating(10, 12, 6, 4.3);
+    rukir.DetermineRating(10, 12, 6, 4);
     SaveRankings();
 
-    return 68 - 14;
+    // Day 69: Wordle #1499
+    fletch.DetermineRating(1, 14, 2, 3.9);
+    khana.DetermineRating(2, 14, 3, 3.9);
+    potasium.DetermineRating(2, 14, 3, 3.9);
+    delta.DetermineRating(2, 14, 4, 3.9);
+    daphne.DetermineRating(5, 14, 4, 3.9);
+    juanfan.DetermineRating(5, 14, 4, 3.9);
+    lucy.DetermineRating(5, 14, 4, 3.9);
+    lightning.DetermineRating(5, 14, 4, 3.9);
+    squiddy.DetermineRating(5, 14, 4, 3.9);
+    creeper.DetermineRating(10, 14, 5, 3.9);
+    stano.DetermineRating(10, 14, 5, 3.9);
+    april.DetermineRating(10, 14, 5, 3.9);
+    aidan.DetermineRating(13, 14, 6, 3.9);
+    nyfen.DetermineRating(14, 14, 7, 3.9);
+    SaveRankings();
+
+    // Day 70: Wordle #1500
+    fletch.DetermineRating(1, 13, 4, 5.3);
+    khana.DetermineRating(1, 13, 4, 5.3);
+    creeper.DetermineRating(3, 13, 5, 5.3);
+    squiddy.DetermineRating(3, 13, 5, 5.3);
+    april.DetermineRating(5, 13, 6, 5.3);
+    aidan.DetermineRating(5, 13, 6, 5.3);
+    ben.DetermineRating(5, 13, 6, 5.3);
+    daphne.DetermineRating(5, 13, 6, 5.3);
+    delta.DetermineRating(5, 13, 6, 5.3);
+    juanfan.DetermineRating(10, 13, 7, 5.3);
+    nyfen.DetermineRating(10, 13, 7, 5.3);
+    potasium.DetermineRating(10, 13, 7, 5.3);
+    stano.DetermineRating(10, 13, 7, 5.3);
+    SaveRankings();
+
+    return 70 - 14;
 }
 
 export { CalculateRatings, playersArr }

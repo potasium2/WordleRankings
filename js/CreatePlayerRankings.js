@@ -2,10 +2,8 @@ const TABLE = document.getElementById("playerListingBody");
 let rank = 0;
 
 function CreateTableRow(player, currentDay) {
-    let accent = "607090"; // player.accentColor.substring(1)
-    const accentRGB = parseInt(accent, 16);
-    const luma = GetAccentLuminosity(accentRGB);
-    // const shiftedAccent = ShiftAccentColor(parseInt(accent, 16), 20);
+    let accent = "607090";
+    
     if (player.priorRanks.length > 61) {
         if (player.rating == player.priorRatings[currentDay - 60])
             return document.createElement("div");
@@ -16,20 +14,32 @@ function CreateTableRow(player, currentDay) {
             accent = "808080";
     }
 
+    let taggedCount = 0;
+    let daysCounter = 0;
+    player.tags.forEach(tagged => {
+        daysCounter++;
+        if (tagged) {
+            taggedCount++;
+            accent = "772233";
+        } if (taggedCount >= 3 || daysCounter >= 30) {
+            return;
+        }
+
+        console.log(daysCounter);
+    });
+
+    if (taggedCount >= 3)
+        return document.createElement("div");
+
+
     rank++;
 
     let accentBase = "#fdfdfd";
     let rankUpAccent = "#33dd22";
     let rankDownAccent = "#772233";
 
-    if(((accentRGB >> 16) & 0xff) > 127 && ((accentRGB >> 0) & 0xff) > 195) {
-        rankDownAccent = "#772233";
-    }
-
-    if (luma > 127) {
-        rankUpAccent = "#337722";
-        rankDownAccent = "#772233";
-        accentBase = "#404040";
+    if(taggedCount > 0) {
+        rankDownAccent = "#dd2233";
     }
 
     const tableListing = document.createElement("tr");

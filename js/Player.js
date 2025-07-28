@@ -7,12 +7,18 @@ class Player {
         this.timesTakenFirst = 0;
         this.priorRanks = [];
         this.priorRatings = [];
+        this.tags = [];
     }
 
-    DetermineRating(scorePosition, playerCount, guessCount, wordDifficulty) {
-        if (scorePosition <= 0 || playerCount <= 1)
-            return;
+    DetermineRating(scorePosition, playerCount, guessCount, wordDifficulty, tagged = false) {
+        if (scorePosition <= 0 || playerCount <= 1) {
+            if (tagged) {
+                this.tags.push(tagged);
+            }
 
+            return;
+        }
+    
         this.timesTakenFirst = scorePosition == 1 ? this.timesTakenFirst + 1 : this.timesTakenFirst;
 
         if (guessCount >= 7) {
@@ -20,25 +26,17 @@ class Player {
             playerCount = scorePosition;
         }
 
-        if (guessCount == 1) {
-            this.rating += 8.0 + Math.round(wordDifficulty * 2.0);
-        }
-
-        const eloScaling = Math.min(Math.max(Math.pow(this.rating / 1000.0, 7.0), 1.0), 25.0);
-        const firstPlaceBonus = Math.min(Math.max(1500.0 / this.rating, 1.0), 1.875);
+        const eloScaling = Math.min(Math.max(Math.pow(this.rating / 1000.0, 7.0), 1.0), 30.0);
 
         const scalingFactor = 5.0;
         const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, 1000.0 / this.rating));
 
-        const positionBonus = playerCount - Math.pow(positionScalingFactor / 3.0 * scorePosition, 0.825);
-        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : -Math.pow(wordDifficulty - guessCount, 2.0) / 2.0;
-        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow((playerCount / 6.0) + (scorePosition / 6.0) - scorePosition / 2.0, 2.0) : 0;
+        const positionBonus = (-Math.pow(positionScalingFactor * (10.0 / 3.0) * (scorePosition / playerCount), 0.825)) + 7.5;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
+        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow((playerCount / 3.0) - scorePosition / 2.0, 2.0) : 0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
-        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.65) * (positionBonus + guessBonus) : overallBonus;
-
-        if (scorePosition == 1)
-            overallBonus *= firstPlaceBonus;
+        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.13165) * (positionBonus + guessBonus) : overallBonus;
 
         this.rating += Math.round(overallBonus) - Math.max(0, eloScaling - 1) - positionPenalty;
 
