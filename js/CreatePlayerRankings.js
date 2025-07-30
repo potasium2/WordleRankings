@@ -88,7 +88,10 @@ function CreateTableRow(player, currentDay) {
     playerImage.setAttribute("class", "playerRankingInfo");
     playerImage.setAttribute("id", "playerIcon");
     
-    playerImage.setAttribute("src", "profilePictures/" + player.name + ".png");
+    if (!player.gifProfilePic)
+        playerImage.setAttribute("src", "profilePictures/" + player.name + ".png");
+    else
+        playerImage.setAttribute("src", "profilePictures/" + player.name + ".gif");
 
     const playerName = document.createElement("p");
     playerName.setAttribute("class", "playerRankingInfo");

@@ -1,12 +1,16 @@
 import { RenderRatingGraph, RenderRankGraph } from "./RenderGraph.js";
 const PLAYER_CONTAINER = document.getElementById("playerInformationContainer");
 
-function AddProfilePicture(playerName) {
+function AddProfilePicture(playerData) {
     const playerImage = document.createElement("img");
     playerImage.setAttribute("class", "playerInformation");
     playerImage.setAttribute("id", "playerProfilePicture");
 
-    playerImage.setAttribute("src", "profilePictures/" + playerName + ".png");
+    if (!playerData.gifProfilePic)
+        playerImage.setAttribute("src", "profilePictures/" + playerData.name + ".png");
+    else
+        playerImage.setAttribute("src", "profilePictures/" + playerData.name + ".gif");
+
 
     return playerImage;
 }
@@ -165,7 +169,7 @@ function CreatePlayerPage(playerData) {
     PLAYER_CONTAINER.style["boxShadow"] = "0px 0px 5px 2px " + ShiftAccentColor(hexToInt, -60)
 
     const luma = GetAccentLuminosity(hexToInt)
-    PLAYER_CONTAINER.appendChild(AddProfilePicture(playerData.name));
+    PLAYER_CONTAINER.appendChild(AddProfilePicture(playerData));
     PLAYER_CONTAINER.appendChild(CreateHeadingInfo(playerData, luma));
     PLAYER_CONTAINER.appendChild(CreateInfoContainer(playerData, luma));
 

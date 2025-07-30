@@ -1,8 +1,9 @@
 class Player {
-    constructor(name, rating, accentColor = "#607799") {
+    constructor(name, rating, accentColor = "#607799", gifProfilePic = false) {
         this.name = name;
         this.rating = rating;
         this.accentColor = accentColor;
+        this.gifProfilePic = gifProfilePic;
         this.peakRating = rating;
         this.timesTakenFirst = 0;
         this.priorRanks = [];

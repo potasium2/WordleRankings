@@ -50,6 +50,9 @@ const april = new Player("Bunpril", startingBase, "#80f0f0");
 // Joined Day 57
 const ben = new Player("BenHeck", startingBase, "#a04010");
 
+// Joined Day 71
+const brix = new Player("Lando Griffin", startingBase, "#fceea0", true);
+
 const playersArr = [
     daphne,
     lilli,
@@ -75,7 +78,8 @@ const playersArr = [
     juanfan,
     nidgey,
     april,
-    ben
+    ben,
+    brix
 ];
 
 function SaveRankings() {
@@ -794,22 +798,42 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 70: Wordle #1500
-    fletch.DetermineRating(1, 13, 4, 5.3);
-    khana.DetermineRating(1, 13, 4, 5.3);
-    creeper.DetermineRating(3, 13, 5, 5.3);
-    squiddy.DetermineRating(3, 13, 5, 5.3);
-    april.DetermineRating(5, 13, 6, 5.3);
-    aidan.DetermineRating(5, 13, 6, 5.3);
-    ben.DetermineRating(5, 13, 6, 5.3);
-    daphne.DetermineRating(5, 13, 6, 5.3);
-    delta.DetermineRating(5, 13, 6, 5.3);
-    juanfan.DetermineRating(10, 13, 7, 5.3);
-    nyfen.DetermineRating(10, 13, 7, 5.3);
-    potasium.DetermineRating(10, 13, 7, 5.3);
-    stano.DetermineRating(10, 13, 7, 5.3);
+    fletch.DetermineRating(1, 14, 4, 5.3);
+    khana.DetermineRating(1, 14, 4, 5.3);
+    lucy.DetermineRating(1, 14, 4, 5.3);
+    creeper.DetermineRating(4, 14, 5, 5.3);
+    squiddy.DetermineRating(4, 14, 5, 5.3);
+    april.DetermineRating(6, 14, 6, 5.3);
+    aidan.DetermineRating(6, 14, 6, 5.3);
+    ben.DetermineRating(6, 14, 6, 5.3);
+    daphne.DetermineRating(6, 14, 6, 5.3);
+    delta.DetermineRating(6, 14, 6, 5.3);
+    juanfan.DetermineRating(11, 14, 7, 5.3);
+    nyfen.DetermineRating(11, 14, 7, 5.3);
+    potasium.DetermineRating(11, 14, 7, 5.3);
+    stano.DetermineRating(11, 14, 7, 5.3);
     SaveRankings();
 
-    return 70 - 14;
+    // Day 71: Wordle #1501
+    brix.SetRating(baseRating);
+
+    brix.DetermineRating(0, 0, 0, 4.4, true);
+    aidan.DetermineRating(1, 13, 3, 4.4);
+    khana.DetermineRating(1, 13, 3, 4.4);
+    fletch.DetermineRating(1, 13, 3, 4.4);
+    april.DetermineRating(4, 13, 4, 4.4);
+    creeper.DetermineRating(4, 13, 4, 4.4);
+    delta.DetermineRating(4, 13, 4, 4.4);
+    potasium.DetermineRating(4, 13, 4, 4.4);
+    stano.DetermineRating(4, 13, 4, 4.4);
+    rukir.DetermineRating(4, 13, 4, 4.4);
+    daphne.DetermineRating(10, 13, 5, 4.4);
+    lucy.DetermineRating(10, 13, 5, 4.4);
+    squiddy.DetermineRating(12, 13, 6, 4.4);
+    nyfen.DetermineRating(13, 13, 7, 4.4);
+    SaveRankings();
+
+    return 71 - 14;
 }
 
 export { CalculateRatings, playersArr }
