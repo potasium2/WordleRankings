@@ -27,7 +27,7 @@ const panda = new Player("olimar sigma", startingBase, "#a080f0");
 const stano = new Player("Stanovacuum", startingBase, "#a00040");
 
 // Joined Day 22-24
-const potasium = new Player("Lifeline", startingBase, "#a0a0c0");
+const potasium = new Player("Lifeline", startingBase, "#8080c0");
 const crackbox = new Player("crackbox", startingBase, "#a0a0a0");
 const mario = new Player("the plerg", startingBase, "#f05050");
 
@@ -50,8 +50,10 @@ const april = new Player("Bunpril", startingBase, "#80f0f0");
 // Joined Day 57
 const ben = new Player("BenHeck", startingBase, "#a04010");
 
-// Joined Day 71
+// Joined Day 71-72
 const brix = new Player("Lando Griffin", startingBase, "#fceea0", true);
+const kosa = new Player("Kosa", startingBase, "#0b80a0");
+const izuna = new Player("Izuna", startingBase, "#d020a0");
 
 const playersArr = [
     daphne,
@@ -79,7 +81,9 @@ const playersArr = [
     nidgey,
     april,
     ben,
-    brix
+    brix,
+    kosa,
+    izuna
 ];
 
 function SaveRankings() {
@@ -87,7 +91,9 @@ function SaveRankings() {
     playersArr.sort(function(a, b) {return b.rating - a.rating});
 
     playersArr.forEach(player => {
-        rank++;
+        if (player.rating > 0)
+            rank++;
+
         player.SaveRankingInfo(rank);
     })
 }
@@ -833,7 +839,29 @@ function CalculateRatings() {
     nyfen.DetermineRating(13, 13, 7, 4.4);
     SaveRankings();
 
-    return 71 - 14;
+    // Day 72: Wordle #1502
+    kosa.SetRating(baseRating);
+    izuna.SetRating(baseRating);
+
+    potasium.DetermineRating(1, 16, 3, 4.5);
+    fletch.DetermineRating(2, 16, 4, 4.5);
+    khana.DetermineRating(2, 16, 4, 4.5);
+    aidan.DetermineRating(4, 16, 5, 4.5);
+    izuna.DetermineRating(4, 16, 5, 4.5);
+    daphne.DetermineRating(4, 16, 5, 4.5);
+    juanfan.DetermineRating(4, 16, 5, 4.5);
+    lightning.DetermineRating(4, 16, 5, 4.5);
+    squiddy.DetermineRating(4, 16, 5, 4.5);
+    stano.DetermineRating(4, 16, 5, 4.5);
+    april.DetermineRating(11, 16, 6, 4.5);
+    creeper.DetermineRating(11, 16, 6, 4.5);
+    delta.DetermineRating(11, 16, 6, 4.5);
+    rukir.DetermineRating(14, 16, 7, 4.5);
+    kosa.DetermineRating(14, 16, 7, 4.5);
+    nyfen.DetermineRating(14, 16, 7, 4.5);
+    SaveRankings();
+    
+    return 72 - 14;
 }
 
 export { CalculateRatings, playersArr }
