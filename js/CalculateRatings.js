@@ -91,10 +91,10 @@ function SaveRankings() {
     playersArr.sort(function(a, b) {return b.rating - a.rating});
 
     playersArr.forEach(player => {
-        if (player.rating > 0)
+        if (player.rating > 0) {
             rank++;
-
-        player.SaveRankingInfo(rank);
+            player.SaveRankingInfo(rank);
+        }
     })
 }
 
@@ -860,8 +860,23 @@ function CalculateRatings() {
     kosa.DetermineRating(14, 16, 7, 4.5);
     nyfen.DetermineRating(14, 16, 7, 4.5);
     SaveRankings();
-    
-    return 72 - 14;
+
+    // Day 73: Wordle #1503
+    aidan.DetermineRating(1, 14, 4, 4);
+    izuna.DetermineRating(1, 14, 4, 4);
+    potasium.DetermineRating(1, 14, 4, 4);
+    april.DetermineRating(4, 14, 5, 4);
+    brix.DetermineRating(4, 14, 5, 4);
+    juanfan.DetermineRating(4, 14, 5, 4);
+    nyfen.DetermineRating(4, 14, 5, 4);
+    rukir.DetermineRating(4, 14, 5, 4);
+    creeper.DetermineRating(9, 14, 6, 4);
+    fletch.DetermineRating(9, 14, 6, 4);
+    khana.DetermineRating(9, 14, 6, 4);
+    squiddy.DetermineRating(9, 14, 6, 4);
+    daphne.DetermineRating(13, 14, 7, 4);
+    lucy.DetermineRating(13, 14, 7, 4);
+    SaveRankings();
 }
 
 export { CalculateRatings, playersArr }

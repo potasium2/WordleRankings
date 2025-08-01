@@ -91,3 +91,15 @@
     height: 24px;
     margin: auto;
 }
+
+@media only screen and (max-width: 1600px) {
+    #playerInformationContainer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #playerInformationContainer {
+        width: 90%;
+    }
+}

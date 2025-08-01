@@ -1,16 +1,16 @@
 const TABLE = document.getElementById("playerListingBody");
 let rank = 0;
 
-function CreateTableRow(player, currentDay) {
+function CreateTableRow(player) {
     let accent = "607090";
     
     if (player.priorRanks.length > 61) {
-        if (player.rating == player.priorRatings[currentDay - 60])
+        if (player.rating == player.priorRatings[player.priorRatings.length - 60])
             return document.createElement("div");
     }
     
     if (player.priorRanks.length > 31) {
-        if (player.rating == player.priorRatings[currentDay - 30])
+        if (player.rating == player.priorRatings[player.priorRatings.length - 30])
             accent = "808080";
     }
 
@@ -24,8 +24,6 @@ function CreateTableRow(player, currentDay) {
         } if (taggedCount >= 3 || daysCounter >= 30) {
             return;
         }
-
-        console.log(daysCounter);
     });
 
     if (taggedCount >= 3)
@@ -57,7 +55,7 @@ function CreateTableRow(player, currentDay) {
     rankChange.setAttribute("class", "playerRankingInfo");
     rankChange.setAttribute("id", "rankChange");
 
-    const rankDifference = CompareCurrentRank(player, currentDay)
+    const rankDifference = CompareCurrentRank(player)
 
     if (rankDifference > 0) {
         rankChange.innerHTML = "🠅" + rankDifference;
@@ -73,6 +71,7 @@ function CreateTableRow(player, currentDay) {
     wordleRating.setAttribute("class", "playerRankingInfo");
     wordleRating.setAttribute("id", "wordleRating");
     wordleRating.setAttribute("style", "color:" + accentBase);
+    wordleRating.setAttribute("title", Math.round(player.rating * 100) / 100 + "wr");
     wordleRating.textContent = Math.round(player.rating) + "wr";
 
     const heldRankOne = document.createElement("td");
@@ -111,39 +110,19 @@ function CreateTableRow(player, currentDay) {
     return tableListing;
 }
 
-function GetAccentLuminosity(accentRGB) {
-    const red = (accentRGB >> 16) & 0xff;
-    const green = (accentRGB >> 8) & 0xff;
-    const blue = accentRGB & 0xff;
-
-    return 0.22 * red + 0.715 * green + 0.072 * blue;
-}
-
-function ShiftAccentColor(accentRGB, shift) {
-    const red = (accentRGB >> 16) & 0xff;
-    const green = (accentRGB >> 8) & 0xff;
-    const blue = accentRGB & 0xff;
-
-    let shiftedRed = Math.min(Math.max(1, (red + shift)), 255).toString(16);
-    let shiftedGreen = Math.min(Math.max(1, (green + shift)), 255).toString(16);
-    let shiftedBlue = Math.min(Math.max(1, (blue + shift)), 255).toString(16);
-
-    shiftedRed = shiftedRed.length < 2 ? "0" + shiftedRed : shiftedRed;
-    shiftedGreen = shiftedGreen.length < 2 ? "0" + shiftedGreen : shiftedGreen;
-    shiftedBlue = shiftedBlue.length < 2 ? "0" + shiftedBlue : shiftedBlue;
-    return "#" + shiftedRed + shiftedGreen + shiftedBlue;
-}
-
-function CompareCurrentRank(player, currentDay) {
-    const rankLastMonth = player.priorRanks[currentDay - 14];
-    const currentRank = player.priorRanks[currentDay];
-    console.log(currentRank);
+function CompareCurrentRank(player) {
+    let rankLastMonth;
+    if (player.priorRanks.length < 14)
+        rankLastMonth = player.priorRanks[0];
+    else
+        rankLastMonth = player.priorRanks[player.priorRanks.length - 15];
+    const currentRank = player.priorRanks[player.priorRanks.length - 1];
     return rankLastMonth - currentRank;
 }
 
-function CreateRankingsTable(playersArr, currentDay) {
+function CreateRankingsTable(playersArr) {
     playersArr.forEach(player => {
-        TABLE.appendChild(CreateTableRow(player, currentDay));
+        TABLE.appendChild(CreateTableRow(player));
     });
 }
 

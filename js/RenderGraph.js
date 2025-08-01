@@ -7,7 +7,7 @@ function RenderRankGraph(playerData) {
     for (let i = 1; i < maxNumberDaysToShow + 2; i++) {
         const pastRanking = playerData.priorRanks[playerData.priorRanks.length - i];
         const pastRating = playerData.priorRatings[playerData.priorRatings.length - i];
-        if (pastRating < 100)
+        if (pastRating < 100 || pastRating == null)
             break;
 
         xValues.push(i);
@@ -96,7 +96,7 @@ function RenderRatingGraph(playerData) {
 
     for (let i = 1; i < maxNumberDaysToShow + 2; i++) {
         const pastRating = playerData.priorRatings[playerData.priorRatings.length - i];
-        if (pastRating < 100)
+        if (pastRating < 100 || pastRating == null)
             break;
 
         xValues.push(i);

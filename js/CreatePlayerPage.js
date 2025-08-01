@@ -18,7 +18,7 @@ function AddProfilePicture(playerData) {
 function CreateHeadingInfo(playerData, luma) {
     let accentBase = "#fdfdfd";
 
-    if (luma > 127)
+    if (luma > 144)
         accentBase = "#404040";
 
     const headingInfo = document.createElement("div");
@@ -44,7 +44,7 @@ function CreateInfoContainer(playerData, luma) {
     let ratingAccent = ShiftAccentColor(hexToInt, 40);
     let peakRatingAccent = ShiftAccentColor(hexToInt, 80);
 
-    if (luma > 127) {
+    if (luma > 144) {
         accentBase = "#444444";
         accentSecondary = "#5c5c5c";
         ratingAccent = ShiftAccentColor(hexToInt, -Math.round(luma / 2));
@@ -116,14 +116,18 @@ function CreateInfoContainer(playerData, luma) {
     peakScoreRank.setAttribute("id", "scoreRank");
     
     const peakRatingText = document.createElement("p");
-    peakRatingText.setAttribute("class", "rankText");
-    peakRatingText.setAttribute("style", "color:" + accentSecondary);
-    peakRatingText.textContent = "Peak Rating";
-
     const peakRatingValue = document.createElement("p");
-    peakRatingValue.setAttribute("class", "peakRating");
-    peakRatingValue.setAttribute("style", "color:" + peakRatingAccent);
-    peakRatingValue.textContent = Math.round(playerData.peakRating) + "wr";
+
+    console.log(screen.width);
+    if (screen.width > 1080) {
+        peakRatingText.setAttribute("class", "rankText");
+        peakRatingText.setAttribute("style", "color:" + accentSecondary);
+        peakRatingText.textContent = "Peak Rating";
+
+        peakRatingValue.setAttribute("class", "peakRating");
+        peakRatingValue.setAttribute("style", "color:" + peakRatingAccent);
+        peakRatingValue.textContent = Math.round(playerData.peakRating) + "wr";
+    }
 
     peakScoreRank.appendChild(peakRatingText);
     peakScoreRank.appendChild(peakRatingValue);

@@ -96,3 +96,21 @@ tr {
     border-radius: 5px;
     float: left;
 }
+
+@media only screen and (max-width: 1200px) {
+    #playerListingContainer {
+        width: 55%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #playerListingContainer {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    #playerListingContainer {
+        width: 75%;
+    }
+}
