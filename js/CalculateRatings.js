@@ -862,20 +862,20 @@ function CalculateRatings() {
     SaveRankings();
 
     // Day 73: Wordle #1503
-    aidan.DetermineRating(1, 14, 4, 4);
-    izuna.DetermineRating(1, 14, 4, 4);
-    potasium.DetermineRating(1, 14, 4, 4);
-    april.DetermineRating(4, 14, 5, 4);
-    brix.DetermineRating(4, 14, 5, 4);
-    juanfan.DetermineRating(4, 14, 5, 4);
-    nyfen.DetermineRating(4, 14, 5, 4);
-    rukir.DetermineRating(4, 14, 5, 4);
-    creeper.DetermineRating(9, 14, 6, 4);
-    fletch.DetermineRating(9, 14, 6, 4);
-    khana.DetermineRating(9, 14, 6, 4);
-    squiddy.DetermineRating(9, 14, 6, 4);
-    daphne.DetermineRating(13, 14, 7, 4);
-    lucy.DetermineRating(13, 14, 7, 4);
+    aidan.DetermineRating(1, 14, 4, 4.6);
+    izuna.DetermineRating(1, 14, 4, 4.6);
+    potasium.DetermineRating(1, 14, 4, 4.6);
+    april.DetermineRating(4, 14, 5, 4.6);
+    brix.DetermineRating(4, 14, 5, 4.6);
+    juanfan.DetermineRating(4, 14, 5, 4.6);
+    nyfen.DetermineRating(4, 14, 5, 4.6);
+    rukir.DetermineRating(4, 14, 5, 4.6);
+    creeper.DetermineRating(9, 14, 6, 4.6);
+    fletch.DetermineRating(9, 14, 6, 4.6);
+    khana.DetermineRating(9, 14, 6, 4.6);
+    squiddy.DetermineRating(9, 14, 6, 4.6);
+    daphne.DetermineRating(13, 14, 7, 4.6);
+    lucy.DetermineRating(13, 14, 7, 4.6);
     SaveRankings();
 }
 
