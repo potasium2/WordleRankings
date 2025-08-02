@@ -1,8 +1,12 @@
+import { CURRENT_SYSTEM } from "../Globals.js";
+
 const TABLE = document.getElementById("playerListingBody");
 let rank = 0;
 
-function CreateTableRow(player) {
+function CreateTableRow(player, ratingSystemIteration) {
     let accent = "607090";
+    if (ratingSystemIteration !== CURRENT_SYSTEM)
+        accent = "609070"
     
     if (player.priorRanks.length > 61) {
         if (player.rating == player.priorRatings[player.priorRatings.length - 60])
@@ -43,7 +47,7 @@ function CreateTableRow(player) {
     const tableListing = document.createElement("tr");
     tableListing.setAttribute("class", "playerListing");
     tableListing.setAttribute("style", "background-color:#" + accent);
-    tableListing.setAttribute("onclick", "location.href='playerpage.html?playerName=" + player.name + "'")
+    tableListing.setAttribute("onclick", "location.href='playerpage.html?playerName=" + player.name + "&ratingSystem=" + ratingSystemIteration + "'");
 
     const rankingNumber = document.createElement("td");
     rankingNumber.setAttribute("class", "playerRankingInfo")
@@ -67,12 +71,18 @@ function CreateTableRow(player) {
         rankChange.setAttribute("style", "color:" + rankDownAccent)
     }
 
+    let playerRatingDisplay = player.rating;
+
+    if (ratingSystemIteration !== CURRENT_SYSTEM) {
+        playerRatingDisplay = player.altRating
+    }
+
     const wordleRating = document.createElement("td");
     wordleRating.setAttribute("class", "playerRankingInfo");
     wordleRating.setAttribute("id", "wordleRating");
     wordleRating.setAttribute("style", "color:" + accentBase);
-    wordleRating.setAttribute("title", Math.round(player.rating * 100) / 100 + "wr");
-    wordleRating.textContent = Math.round(player.rating) + "wr";
+    wordleRating.setAttribute("title", Math.round(playerRatingDisplay * 100) / 100 + "wr");
+    wordleRating.textContent = Math.round(playerRatingDisplay) + "wr";
 
     const heldRankOne = document.createElement("td");
     heldRankOne.setAttribute("class", "playerRankingInfo");
@@ -120,9 +130,9 @@ function CompareCurrentRank(player) {
     return rankLastMonth - currentRank;
 }
 
-function CreateRankingsTable(playersArr) {
+function CreateRankingsTable(playersArr, ratingSystemIteration = CURRENT_SYSTEM) {
     playersArr.forEach(player => {
-        TABLE.appendChild(CreateTableRow(player));
+        TABLE.appendChild(CreateTableRow(player, ratingSystemIteration));
     });
 }
 

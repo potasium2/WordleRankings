@@ -1,8 +1,9 @@
-import { CalculateRatings, playersArr } from "./CalculateRatings.js";
+import { CalculateRatings, playersArr } from "../Player Calculation/CalculateRatings.js";
 import { CreatePlayerPage } from "./CreatePlayerPage.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const playerName = urlParams.get('playerName');
+const ratingSystemIteration = parseInt(urlParams.get('ratingSystem'));
 
 document.title = playerName + "'s Ranking Info"
 let playerData;
@@ -14,5 +15,6 @@ playersArr.forEach(player => {
     }
 });
 
-CalculateRatings();
-CreatePlayerPage(playerData);
+console.log(ratingSystemIteration);
+CalculateRatings(ratingSystemIteration);
+CreatePlayerPage(playerData, ratingSystemIteration);

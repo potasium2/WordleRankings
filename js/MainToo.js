@@ -1,7 +1,7 @@
 import { CalculateRatings, playersArr } from './Player Calculation/CalculateRatings.js';
 import { CreateRankingsTable } from './Create Pages/CreatePlayerRankings.js';
 
-CalculateRatings();
-playersArr.sort(function(a, b) {return b.rating - a.rating});
+CalculateRatings(0);
+playersArr.sort(function(a, b) {return b.altRating - a.altRating});
 
-CreateRankingsTable(playersArr);
+CreateRankingsTable(playersArr, 0);

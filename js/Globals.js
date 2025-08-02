@@ -1,0 +1,3 @@
+const CURRENT_SYSTEM = 1; // 2025_07_28
+
+export { CURRENT_SYSTEM }

@@ -1,0 +1,41 @@
+* {
+    font-family: arial;
+}
+
+/* Page Header */
+.header {
+    position: sticky;
+    top: 0;
+    margin: -8px -8px 0 -8px;
+    padding: 5px;
+    background-color: black;
+    text-align: center;
+}
+
+.headerButton {
+    color:white;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.5s all;
+    text-decoration: none;
+}
+
+.headerButton:hover {
+    color: #647790;
+    cursor: pointer;
+    background-color: #383838;
+}
+
+#rankingsHeaderButton:hover {
+    color: #607090;
+}
+
+#oldRankingsHeaderButton:hover {
+    color: #609070;
+}
+
+#infoHeaderButton:hover {
+    color: #906070;
+}

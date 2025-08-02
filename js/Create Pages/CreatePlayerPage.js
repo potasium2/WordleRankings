@@ -1,4 +1,5 @@
-import { RenderRatingGraph, RenderRankGraph } from "./RenderGraph.js";
+import { RenderRatingGraph, RenderRankGraph } from "../Player Calculation/RenderGraph.js";
+import { CURRENT_SYSTEM } from "../Globals.js";
 const PLAYER_CONTAINER = document.getElementById("playerInformationContainer");
 
 function AddProfilePicture(playerData) {
@@ -35,7 +36,7 @@ function CreateHeadingInfo(playerData, luma) {
     return headingInfo;
 }
 
-function CreateInfoContainer(playerData, luma) {
+function CreateInfoContainer(playerData, luma, ratingSystemIteration) {
     const accent = playerData.accentColor.substring(1);
     const hexToInt = parseInt(accent, 16);
     let accentBase = "#dddddd";
@@ -103,10 +104,14 @@ function CreateInfoContainer(playerData, luma) {
     wordleRatingText.setAttribute("style", "color:" + accentSecondary);
     wordleRatingText.textContent = "Wordle Rating";
 
+    let ratingForDisplay = playerData.rating;
+    if (ratingSystemIteration !== CURRENT_SYSTEM)
+        ratingForDisplay = playerData.altRating;
+
     const wordleRatingValue = document.createElement("p");
     wordleRatingValue.setAttribute("class", "currentRating");
     wordleRatingValue.setAttribute("style", "color:" + ratingAccent);
-    wordleRatingValue.textContent = Math.round(playerData.rating) + "wr";
+    wordleRatingValue.textContent = Math.round(ratingForDisplay) + "wr";
 
     scoreRank.appendChild(wordleRatingText);
     scoreRank.appendChild(wordleRatingValue);
@@ -163,7 +168,7 @@ function ShiftAccentColor(accentRGB, shift) {
     return "#" + shiftedRed + shiftedGreen + shiftedBlue;
 }
 
-function CreatePlayerPage(playerData) {
+function CreatePlayerPage(playerData, ratingSystemIteration = CURRENT_SYSTEM) {
     const accent = playerData.accentColor.substring(1);
     const hexToInt = parseInt(accent, 16);
 
@@ -175,7 +180,7 @@ function CreatePlayerPage(playerData) {
     const luma = GetAccentLuminosity(hexToInt)
     PLAYER_CONTAINER.appendChild(AddProfilePicture(playerData));
     PLAYER_CONTAINER.appendChild(CreateHeadingInfo(playerData, luma));
-    PLAYER_CONTAINER.appendChild(CreateInfoContainer(playerData, luma));
+    PLAYER_CONTAINER.appendChild(CreateInfoContainer(playerData, luma, ratingSystemIteration));
 
     const rankGraph = document.createElement("canvas");
     rankGraph.setAttribute("class", "playerInformation");
