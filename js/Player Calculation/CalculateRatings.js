@@ -106,11 +106,42 @@ function SaveRankings(ratingSystemIteration) {
 
         playersArr.forEach(player => {
             if (player.rating > 0) {
-                rank++;
-                player.SaveRankingInfo(rank);
+
+                if (player.priorRanks.length > 60) {
+                    if (player.rating == player.priorRatings[player.priorRatings.length - 59]) {
+                        player.SaveRankingInfo(playersArr.length);
+                    } else {
+                        rank++;
+                        player.SaveRankingInfo(rank);
+                    }
+                } else if (IsPlayerBanned(player)) {
+                    player.SaveRankingInfo(playersArr.length);
+                } else {
+                    rank++;
+                    player.SaveRankingInfo(rank);
+                }
             }
         });
     }
+}
+
+function IsPlayerBanned(player) {
+    let taggedCount = 0;
+    let daysCounter = 0;
+    let status = false;
+    player.tags.forEach(tagged => {
+        daysCounter++;
+        if (tagged) {
+            taggedCount++;
+        } if (taggedCount >= 3 || daysCounter >= 30) {
+            return;
+        }
+    });
+
+    if (taggedCount >= 3)
+        status = true;
+
+    return status;
 }
 
 const baseRating = 1000;
@@ -589,17 +620,17 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     // Day 54: Wordle #1484
     juanfan.SetRating(baseRating);
 
-    potasium.DetermineRating(1, 11, 1, 4.9);
-    panda.DetermineRating(2, 11, 5, 4.9);
-    aidan.DetermineRating(3, 11, 6, 4.9);
-    creeper.DetermineRating(3, 11, 6, 4.9);
-    juanfan.DetermineRating(3, 11, 6, 4.9);
-    lightning.DetermineRating(3, 11, 6, 4.9);
-    nyfen.DetermineRating(3, 11, 6, 4.9);
-    squiddy.DetermineRating(3, 11, 6, 4.9);
-    lilli.DetermineRating(9, 11, 7, 4.9);
-    lucy.DetermineRating(9, 11, 7, 4.9);
-    stano.DetermineRating(9, 11, 7, 4.9);
+    potasium.DetermineRating(0, 0, 0, 4.9, true);
+    panda.DetermineRating(1, 10, 5, 4.9);
+    aidan.DetermineRating(2, 10, 6, 4.9);
+    creeper.DetermineRating(2, 10, 6, 4.9);
+    juanfan.DetermineRating(2, 10, 6, 4.9);
+    lightning.DetermineRating(2, 10, 6, 4.9);
+    nyfen.DetermineRating(2, 10, 6, 4.9);
+    squiddy.DetermineRating(2, 10, 6, 4.9);
+    lilli.DetermineRating(8, 10, 7, 4.9);
+    lucy.DetermineRating(8, 10, 7, 4.9);
+    stano.DetermineRating(8, 10, 7, 4.9);
     SaveRankings(ratingSystemIteration);
 
     // Day 55: Wordle #1485
@@ -698,12 +729,12 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     SaveRankings(ratingSystemIteration);
 
     // Day 62: Wordle #1492
-    creeper.DetermineRating(1, 6, 1, 4.1);
-    aidan.DetermineRating(2, 6, 3, 4.1);
-    squiddy.DetermineRating(3, 6, 4, 4.1);
-    juanfan.DetermineRating(3, 6, 4, 4.1);
-    potasium.DetermineRating(5, 6, 5, 4.1);
-    nyfen.DetermineRating(6, 6, 6, 4.1);
+    creeper.DetermineRating(0, 0, 0, 4.1, true);
+    aidan.DetermineRating(1, 5, 3, 4.1);
+    squiddy.DetermineRating(2, 5, 4, 4.1);
+    juanfan.DetermineRating(2, 5, 4, 4.1);
+    potasium.DetermineRating(4, 5, 5, 4.1);
+    nyfen.DetermineRating(5, 5, 6, 4.1);
     SaveRankings(ratingSystemIteration);
 
     // Day 63: Wordle #1493
@@ -735,21 +766,21 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     SaveRankings(ratingSystemIteration);
 
     // Day 65: Wordle #1495 - the water incident
-    rukir.DetermineRating(1, 15, 1, 5.2);
-    delta.DetermineRating(2, 15, 3, 4.7);
-    lucy.DetermineRating(2, 15, 3, 4.7);
-    creeper.DetermineRating(2, 15, 3, 4.7);
-    fletch.DetermineRating(5, 15, 4, 4.7);
-    lilli.DetermineRating(6, 15, 5, 4.7);
-    khana.DetermineRating(6, 15, 5, 4.7);
-    panda.DetermineRating(6, 15, 5, 4.7);
-    april.DetermineRating(9, 15, 6, 4.7);
-    aidan.DetermineRating(10, 15, 7, 4.7);
-    juanfan.DetermineRating(10, 15, 7, 4.7);
-    nidgey.DetermineRating(10, 15, 7, 4.7);
-    nyfen.DetermineRating(10, 15, 7, 4.7);
-    potasium.DetermineRating(10, 15, 7, 4.7);
-    squiddy.DetermineRating(10, 15, 7, 4.7);
+    rukir.DetermineRating(0, 0, 0, 5.2, true);
+    delta.DetermineRating(1, 14, 3, 4.7);
+    lucy.DetermineRating(1, 14, 3, 4.7);
+    creeper.DetermineRating(1, 14, 3, 4.7);
+    fletch.DetermineRating(4, 14, 4, 4.7);
+    lilli.DetermineRating(5, 14, 5, 4.7);
+    khana.DetermineRating(5, 14, 5, 4.7);
+    panda.DetermineRating(5, 14, 5, 4.7);
+    april.DetermineRating(8, 14, 6, 4.7);
+    aidan.DetermineRating(9, 14, 7, 4.7);
+    juanfan.DetermineRating(9, 14, 7, 4.7);
+    nidgey.DetermineRating(9, 14, 7, 4.7);
+    nyfen.DetermineRating(9, 14, 7, 4.7);
+    potasium.DetermineRating(9, 14, 7, 4.7);
+    squiddy.DetermineRating(9, 14, 7, 4.7);
     SaveRankings(ratingSystemIteration);
 
     // Day 66: Wordle #1496
@@ -896,24 +927,42 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     // Day 74: Wordle #1504
     roily.SetRating(baseRating);
 
-    izuna.DetermineRating(1, 18, 4, 4.6);
-    lightning.DetermineRating(1, 18, 4, 4.6);
-    stano.DetermineRating(1, 18, 4, 4.6);
-    roily.DetermineRating(1, 18, 4, 4.6);
-    ghostcowz.DetermineRating(1, 18, 4, 4.6);
-    aidan.DetermineRating(6, 18, 5, 4.6);
-    creeper.DetermineRating(6, 18, 5, 4.6);
-    juanfan.DetermineRating(6, 18, 5, 4.6);
-    khana.DetermineRating(6, 18, 5, 4.6);
-    lucy.DetermineRating(6, 18, 5, 4.6);
-    nyfen.DetermineRating(6, 18, 5, 4.6);
-    rukir.DetermineRating(6, 18, 5, 4.6);
-    april.DetermineRating(13, 18, 6, 4.6);
-    daphne.DetermineRating(13, 18, 6, 4.6);
-    potasium.DetermineRating(13, 18, 6, 4.6);
-    squiddy.DetermineRating(13, 18, 6, 4.6);
-    lobsterfighter.DetermineRating(17, 18, 7, 4.6);
-    delta.DetermineRating(17, 18, 7, 4.6);
+    fletch.DetermineRating(1, 19, 4, 4.6)
+    ghostcowz.DetermineRating(1, 19, 4, 4.6);
+    izuna.DetermineRating(1, 19, 4, 4.6);
+    lightning.DetermineRating(1, 19, 4, 4.6);
+    roily.DetermineRating(1, 19, 4, 4.6);
+    stano.DetermineRating(1, 19, 4, 4.6);
+    aidan.DetermineRating(7, 19, 5, 4.6);
+    creeper.DetermineRating(7, 19, 5, 4.6);
+    juanfan.DetermineRating(7, 19, 5, 4.6);
+    khana.DetermineRating(7, 19, 5, 4.6);
+    lucy.DetermineRating(7, 19, 5, 4.6);
+    nyfen.DetermineRating(7, 19, 5, 4.6);
+    rukir.DetermineRating(7, 19, 5, 4.6);
+    april.DetermineRating(14, 19, 6, 4.6);
+    daphne.DetermineRating(14, 19, 6, 4.6);
+    potasium.DetermineRating(14, 19, 6, 4.6);
+    squiddy.DetermineRating(14, 19, 6, 4.6);
+    lobsterfighter.DetermineRating(18, 19, 7, 4.6);
+    delta.DetermineRating(18, 19, 7, 4.6);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 75: Wordle #1505
+    aidan.DetermineRating(1, 14, 2, 4.5);
+    potasium.DetermineRating(1, 14, 2, 4.5);
+    april.DetermineRating(3, 14, 3, 4.5);
+    izuna.DetermineRating(3, 14, 3, 4.5);
+    creeper.DetermineRating(5, 14, 4, 4.5);
+    khana.DetermineRating(5, 14, 4, 4.5);
+    nyfen.DetermineRating(5, 14, 4, 4.5);
+    squiddy.DetermineRating(5, 14, 4, 4.5);
+    stano.DetermineRating(5, 14, 4, 4.5);
+    daphne.DetermineRating(10, 14, 5, 4.5);
+    juanfan.DetermineRating(10, 14, 5, 4.5);
+    rukir.DetermineRating(10, 14, 5, 4.5);
+    lightning.DetermineRating(13, 14, 7, 4.5);
+    lucy.DetermineRating(13, 14, 7, 4.5);
     SaveRankings(ratingSystemIteration);
 }
 

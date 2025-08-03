@@ -93,7 +93,7 @@ class Player {
     SaveRankingInfo(rank) {
         this.peakRating = this.rating > this.peakRating ? this.rating : this.peakRating;
         this.timeSincePeakRank = this.timeSincePeakRank == null ? 0 : rank < this.peakRank ? 0 : this.timeSincePeakRank + 1;
-        this.peakRank = this.peakRank == null ? rank : rank < this.peakRank ? rank : this.peakRank;
+        this.peakRank = this.peakRank == null ? rank : rank < this.peakRank && rank > 0 ? rank : this.peakRank;
         this.priorRanks.push(rank);
         this.priorRatings.push(this.rating);
     }

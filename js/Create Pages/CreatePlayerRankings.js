@@ -4,17 +4,19 @@ const TABLE = document.getElementById("playerListingBody");
 let rank = 0;
 
 function CreateTableRow(player, ratingSystemIteration) {
+    let playerRatingDisplay = ratingSystemIteration === CURRENT_SYSTEM ? player.rating : player.altRating;
+
     let accent = "607090";
     if (ratingSystemIteration !== CURRENT_SYSTEM)
         accent = "609070"
     
     if (player.priorRanks.length > 61) {
-        if (player.rating == player.priorRatings[player.priorRatings.length - 60])
+        if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 60])
             return document.createElement("div");
     }
     
     if (player.priorRanks.length > 31) {
-        if (player.rating == player.priorRatings[player.priorRatings.length - 30])
+        if (playerRatingDisplay== player.priorRatings[player.priorRatings.length - 30])
             accent = "808080";
     }
 
@@ -69,12 +71,6 @@ function CreateTableRow(player, ratingSystemIteration) {
     if (rankDifference < 0) {
         rankChange.innerHTML = "🠇" + Math.abs(rankDifference);
         rankChange.setAttribute("style", "color:" + rankDownAccent)
-    }
-
-    let playerRatingDisplay = player.rating;
-
-    if (ratingSystemIteration !== CURRENT_SYSTEM) {
-        playerRatingDisplay = player.altRating
     }
 
     const wordleRating = document.createElement("td");
