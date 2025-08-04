@@ -8,9 +8,9 @@ function AddProfilePicture(playerData) {
     playerImage.setAttribute("id", "playerProfilePicture");
 
     if (!playerData.gifProfilePic)
-        playerImage.setAttribute("src", "profilePictures/" + playerData.name + ".png");
+        playerImage.setAttribute("src", "../profilePictures/" + playerData.name + ".png");
     else
-        playerImage.setAttribute("src", "profilePictures/" + playerData.name + ".gif");
+        playerImage.setAttribute("src", "../profilePictures/" + playerData.name + ".gif");
 
 
     return playerImage;

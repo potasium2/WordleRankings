@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="header.css">
-        <link rel="stylesheet" href="leaderboard.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/leaderboard.css">
 
-        <script type="module" src="js/MainToo.js"></script>
-        <title>Old Wordle Rankings</title>
+        <script type="module" src="../js/Main.js"></script>
+        <script type="module" src="../js/siteVersion.js"></script>
+        <title>The Lightning Lounge Wordle Rankings</title>
     </head>
     <body>
         <div class="header">
-            <a class="headerButton" id="rankingsHeaderButton" href="leaderboard.html">Rankings</a>
-            <a class="headerButton" id="oldRankingsHeaderButton">Old Rankings</a>
+            <a class="headerButton" id="rankingsHeaderButton">Rankings</a>
+            <a class="headerButton" id="topRankHistoryButton" href="rank one history.html">Top Rankings History</a>
+            <a class="headerButton" id="oldRankingsHeaderButton" href="old leaderboard.html">Old Rankings</a>
             <a class="headerButton" id="infoHeaderButton" href="info.html">Info</a>
         </div>
+        <a id="siteVersion" onclick="location.href='changelog.html'"></a>
         <table id="playerListingContainer">
             <tbody id="playerListingBody">
                 <tr class="playerListingHeader" style="background-color:none">

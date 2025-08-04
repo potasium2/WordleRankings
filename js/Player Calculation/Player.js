@@ -13,13 +13,10 @@ class Player {
     }
 
     DetermineRating(scorePosition, playerCount, guessCount, wordDifficulty, tagged = false) {
+        this.tags.push(tagged);
         this.DetermineOldRating(scorePosition, playerCount, guessCount, wordDifficulty);
 
         if (scorePosition <= 0 || playerCount <= 1) {
-            if (tagged) {
-                this.tags.push(tagged);
-            }
-
             return;
         }
     
@@ -37,12 +34,12 @@ class Player {
 
         const positionBonus = (-Math.pow(positionScalingFactor * (10.0 / 3.0) * (scorePosition / playerCount), 0.825)) + 7.5;
         const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
-        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow((playerCount / 3.0) - scorePosition / 2.0, 2.0) : 0;
+        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow((playerCount / 3.0) - scorePosition / 2.0, 2.0) : 1.0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.13165) * (positionBonus + guessBonus) : overallBonus;
 
-        this.rating += Math.round(overallBonus) - Math.max(0, eloScaling - 1) - positionPenalty;
+        this.rating += Math.round(overallBonus) - (Math.max(0, eloScaling - 1) * positionPenalty);
 
         if (this.rating <= 100)
             this.rating = 100;
@@ -93,6 +90,7 @@ class Player {
     SaveRankingInfo(rank) {
         this.peakRating = this.rating > this.peakRating ? this.rating : this.peakRating;
         this.timeSincePeakRank = this.timeSincePeakRank == null ? 0 : rank < this.peakRank ? 0 : this.timeSincePeakRank + 1;
+        this.timeSpentAtPeak = this.timeSpentAtPeak == null ? 1 : rank < this.peakRank && rank > 0 ? 1 : rank > this.peakRank ? this.timeSpentAtPeak : this.timeSpentAtPeak + 1;
         this.peakRank = this.peakRank == null ? rank : rank < this.peakRank && rank > 0 ? rank : this.peakRank;
         this.priorRanks.push(rank);
         this.priorRatings.push(this.rating);

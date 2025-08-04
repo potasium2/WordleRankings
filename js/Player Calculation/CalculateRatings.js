@@ -28,7 +28,7 @@ const panda = new Player("olimar sigma", startingBase, "#a080f0");
 const stano = new Player("Stanovacuum", startingBase, "#a00040");
 
 // Joined Day 22-24
-const potasium = new Player("Lifeline", startingBase, "#8080c0");
+const potasium = new Player("Noah", startingBase, "#1040b0");
 const crackbox = new Player("crackbox", startingBase, "#a0a0a0");
 const mario = new Player("the plerg", startingBase, "#f05050");
 
@@ -51,11 +51,12 @@ const april = new Player("Bunpril", startingBase, "#80f0f0");
 // Joined Day 57
 const ben = new Player("BenHeck", startingBase, "#a04010");
 
-// Joined Day 71-74
+// Joined Day 71-76
 const brix = new Player("Lando Griffin", startingBase, "#fceea0", true);
 const kosa = new Player("Kosa", startingBase, "#0b80a0");
 const izuna = new Player("Izuna", startingBase, "#d020a0");
 const roily = new Player("Roily", startingBase, "#a01030");
+const nappy = new Player("Nappy3", startingBase, "#c05010");
 
 const playersArr = [
     daphne,
@@ -86,8 +87,11 @@ const playersArr = [
     brix,
     kosa,
     izuna,
-    roily
+    roily,
+    nappy
 ];
+
+let topRankPlayers = [];
 
 function SaveRankings(ratingSystemIteration) {
     let rank = 0;
@@ -98,6 +102,10 @@ function SaveRankings(ratingSystemIteration) {
         playersArr.forEach(player => {
             if (player.altRating > 0) {
                 rank++;
+
+                if (rank == 1)
+                    topRankPlayers.push(player);
+
                 player.SaveAlternativeRankingInfo(rank);
             }
         });
@@ -112,12 +120,20 @@ function SaveRankings(ratingSystemIteration) {
                         player.SaveRankingInfo(playersArr.length);
                     } else {
                         rank++;
+
+                        if (rank == 1)
+                            topRankPlayers.push(player);
+
                         player.SaveRankingInfo(rank);
                     }
                 } else if (IsPlayerBanned(player)) {
                     player.SaveRankingInfo(playersArr.length);
                 } else {
                     rank++;
+
+                    if (rank == 1)
+                        topRankPlayers.push(player);
+
                     player.SaveRankingInfo(rank);
                 }
             }
@@ -129,6 +145,7 @@ function IsPlayerBanned(player) {
     let taggedCount = 0;
     let daysCounter = 0;
     let status = false;
+
     player.tags.forEach(tagged => {
         daysCounter++;
         if (tagged) {
@@ -188,15 +205,18 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     squiddy.DetermineRating(1, 3, 5, 4.4);
     lucy.DetermineRating(1, 3, 5, 4.4);
     aidan.DetermineRating(3, 3, 6, 4.4);
+    SaveRankings(ratingSystemIteration);
 
     // Day 7: Wordle #1437
     lucy.DetermineRating(1, 2, 3, 3.7);
     aidan.DetermineRating(2, 2, 5, 3.7);
+    SaveRankings(ratingSystemIteration);
 
     // Day 8: Wordle #1438
     squiddy.DetermineRating(1, 3, 2, 3.6);
     lucy.DetermineRating(2, 3, 5, 3.6);
     aidan.DetermineRating(3, 3, 6, 3.6);
+    SaveRankings(ratingSystemIteration);
 
     // Day 9: Wordle #1439
     lightning.SetRating(baseRating);
@@ -204,22 +224,27 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(1, 3, 4, 3.9);
     aidan.DetermineRating(1, 3, 4, 3.9);
     lightning.DetermineRating(3, 3, 5, 3.9);
+    SaveRankings(ratingSystemIteration);
 
     // Day 10: Wordle #1440
     lucy.DetermineRating(1, 2, 5, 4.6);
     aidan.DetermineRating(2, 2, 6, 4.6);
+    SaveRankings(ratingSystemIteration);
 
     // Day 11: Wordle #1441
     lucy.DetermineRating(1, 2, 5, 4.3);
     aidan.DetermineRating(2, 2, 6, 4.3);
+    SaveRankings(ratingSystemIteration);
 
     // Day 12: Wordle #1442
     lucy.DetermineRating(1, 2, 2, 4.0);
     aidan.DetermineRating(2, 2, 6, 4.0);
+    SaveRankings(ratingSystemIteration);
 
     // Day 13: Wordle #1443
     lucy.DetermineRating(1, 2, 4, 3.8);
     aidan.DetermineRating(2, 2, 5, 3.8);
+    SaveRankings(ratingSystemIteration);
 
     // Day 14: Wordle #1444
     lobsterfighter.SetRating(baseRating);
@@ -949,21 +974,47 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     SaveRankings(ratingSystemIteration);
 
     // Day 75: Wordle #1505
-    aidan.DetermineRating(1, 14, 2, 4.5);
-    potasium.DetermineRating(1, 14, 2, 4.5);
-    april.DetermineRating(3, 14, 3, 4.5);
-    izuna.DetermineRating(3, 14, 3, 4.5);
-    creeper.DetermineRating(5, 14, 4, 4.5);
-    khana.DetermineRating(5, 14, 4, 4.5);
-    nyfen.DetermineRating(5, 14, 4, 4.5);
-    squiddy.DetermineRating(5, 14, 4, 4.5);
-    stano.DetermineRating(5, 14, 4, 4.5);
-    daphne.DetermineRating(10, 14, 5, 4.5);
-    juanfan.DetermineRating(10, 14, 5, 4.5);
-    rukir.DetermineRating(10, 14, 5, 4.5);
-    lightning.DetermineRating(13, 14, 7, 4.5);
-    lucy.DetermineRating(13, 14, 7, 4.5);
+    aidan.DetermineRating(1, 16, 2, 4.5);
+    potasium.DetermineRating(1, 16, 2, 4.5);
+    april.DetermineRating(3, 16, 3, 4.5);
+    izuna.DetermineRating(3, 16, 3, 4.5);
+    creeper.DetermineRating(5, 16, 4, 4.5);
+    khana.DetermineRating(5, 16, 4, 4.5);
+    nyfen.DetermineRating(5, 16, 4, 4.5);
+    squiddy.DetermineRating(5, 16, 4, 4.5);
+    stano.DetermineRating(5, 16, 4, 4.5);
+    daphne.DetermineRating(10, 16, 5, 4.5);
+    juanfan.DetermineRating(10, 16, 5, 4.5);
+    roily.DetermineRating(10, 16, 5, 4.5);
+    rukir.DetermineRating(10, 16, 5, 4.5);
+    fletch.DetermineRating(14, 16, 6, 4.5);
+    lightning.DetermineRating(15, 16, 7, 4.5);
+    lucy.DetermineRating(15, 16, 7, 4.5);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 76: Wordle #1506
+    nappy.SetRating(baseRating);
+
+    nappy.DetermineRating(1, 19, 2, 4.3);
+    lilli.DetermineRating(2, 19, 3, 4.3);
+    crackbox.DetermineRating(2, 19, 3, 4.3);
+    aidan.DetermineRating(4, 19, 4, 4.3);
+    april.DetermineRating(4, 19, 4, 4.3);
+    brix.DetermineRating(4, 19, 4, 4.3);
+    daphne.DetermineRating(4, 19, 4, 4.3);
+    delta.DetermineRating(4, 19, 4, 4.3);
+    izuna.DetermineRating(4, 19, 4, 4.3);
+    lucy.DetermineRating(4, 19, 4, 4.3);
+    juanfan.DetermineRating(4, 19, 4, 4.3);
+    squiddy.DetermineRating(4, 19, 4, 4.3);
+    creeper.DetermineRating(13, 19, 5, 4.3);
+    lightning.DetermineRating(13, 19, 5, 4.3);
+    nyfen.DetermineRating(13, 19, 5, 4.3);
+    potasium.DetermineRating(13, 19, 5, 4.3);
+    stano.DetermineRating(13, 19, 5, 4.3);
+    rukir.DetermineRating(13, 19, 5, 4.3);
+    khana.DetermineRating(19, 19, 6, 4.3);
     SaveRankings(ratingSystemIteration);
 }
 
-export { CalculateRatings, playersArr }
+export { CalculateRatings, playersArr, topRankPlayers }

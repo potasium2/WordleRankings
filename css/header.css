@@ -32,10 +32,38 @@
     color: #607090;
 }
 
+#topRankHistoryButton:hover {
+    color: #60a0a0;
+}
+
 #oldRankingsHeaderButton:hover {
     color: #609070;
 }
 
 #infoHeaderButton:hover {
     color: #906070;
+}
+
+#siteVersion {
+    position: fixed;
+    margin-top: 12px;
+    font-weight: bold;
+    color:azure;
+    font-size: 20px;
+    transition: 0.5s all;
+}
+
+#siteVersionPage {
+    z-index: -1;
+    position: absolute;
+    margin-top: 12px;
+    font-weight: bold;
+    color:azure;
+    font-size: 20px;
+    transition: 0.5s all;
+}
+
+#siteVersion:hover {
+    color:aqua;
+    cursor: pointer;
 }

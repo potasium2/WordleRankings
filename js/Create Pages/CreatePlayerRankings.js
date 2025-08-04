@@ -22,16 +22,18 @@ function CreateTableRow(player, ratingSystemIteration) {
 
     let taggedCount = 0;
     let daysCounter = 0;
+
+    player.tags.reverse();
     player.tags.forEach(tagged => {
         daysCounter++;
-        if (tagged) {
+        if (tagged && daysCounter <= 30) {
             taggedCount++;
             accent = "772233";
-        } if (taggedCount >= 3 || daysCounter >= 30) {
-            return;
         }
     });
 
+    if (taggedCount >= 1)
+        accent = "772233";
     if (taggedCount >= 3)
         return document.createElement("div");
 
@@ -94,9 +96,9 @@ function CreateTableRow(player, ratingSystemIteration) {
     playerImage.setAttribute("id", "playerIcon");
     
     if (!player.gifProfilePic)
-        playerImage.setAttribute("src", "profilePictures/" + player.name + ".png");
+        playerImage.setAttribute("src", "../profilePictures/" + player.name + ".png");
     else
-        playerImage.setAttribute("src", "profilePictures/" + player.name + ".gif");
+        playerImage.setAttribute("src", "../profilePictures/" + player.name + ".gif");
 
     const playerName = document.createElement("p");
     playerName.setAttribute("class", "playerRankingInfo");
