@@ -3,7 +3,7 @@ import { CreatePlayerPage } from "./CreatePlayerPage.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const playerName = urlParams.get('playerName');
-const ratingSystemIteration = parseInt(urlParams.get('ratingSystem'));
+const ratingSystemIteration = parseFloat(urlParams.get('ratingSystem'));
 
 document.title = playerName + "'s Ranking Info"
 let playerData;

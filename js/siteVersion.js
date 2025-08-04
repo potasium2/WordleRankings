@@ -1,9 +1,10 @@
 const siteVersionDiv = document.getElementById("siteVersion");
+const siteVersion = "Wordle Ratings v1.1.1a";
 
 if (siteVersionDiv !== null)
-    siteVersionDiv.textContent = "Wordle Ratings v1.1.0a";
+    siteVersionDiv.textContent = siteVersion;
 
 const siteVersionPageDiv = document.getElementById("siteVersionPage");
 
 if (siteVersionPageDiv !== null)
-    siteVersionPageDiv.textContent = "Wordle Ratings v1.1.0a";
+    siteVersionPageDiv.textContent = siteVersion;
