@@ -38,6 +38,10 @@ h1 {
     width: 340px;
 }
 
+#longestTime {
+    width: 600px;
+}
+
 .spacing {
     margin-top: 24px;;
 }

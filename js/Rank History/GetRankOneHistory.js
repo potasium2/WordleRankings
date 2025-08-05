@@ -1,6 +1,8 @@
 import { CalculateRatings, topRankPlayers } from "../Player Calculation/CalculateRatings.js";
 const RANK_HISTORY_TABLE = document.getElementById("rankHistory");
+const LONGEST_INDIVIDUAL_TABLE = document.getElementById("longestTime");
 
+let longestReignTimes = [];
 function CalculateRankHistory() {
     CalculateRatings()
 
@@ -30,6 +32,39 @@ function CalculateRankHistory() {
 
     currentRankOne.appendChild(currentRankOneToDate);
     currentRankOne.appendChild(currentRankDaysHeld);
+
+    if (daysHeldCounter >= 50) {
+        longestReignTimes.push({
+            playerName: previousPlayer,
+            startDate: GetDate(dayCounter, daysHeldCounter - 1),
+            endDate: SaveDate(dayCounter),
+            reignLength: daysHeldCounter
+        });
+    }
+
+    longestReignTimes.sort(function(a, b) {return b.reignLength - a.reignLength})
+    longestReignTimes.forEach(reign => {
+        const reignRow = document.createElement("tr");
+        
+        const indivReign = document.createElement("td");
+        indivReign.textContent = reign.playerName;
+
+        const indivFromDate = document.createElement("td");
+        indivFromDate.textContent = reign.startDate;
+
+        const indivToDate = document.createElement("td");
+        indivToDate.textContent = reign.endDate;
+
+        const timeSpent = document.createElement("td");
+        timeSpent.textContent = reign.reignLength;
+
+        reignRow.appendChild(indivReign);
+        reignRow.appendChild(indivFromDate);
+        reignRow.appendChild(indivToDate);
+        reignRow.appendChild(timeSpent);
+
+        LONGEST_INDIVIDUAL_TABLE.appendChild(reignRow);
+    });
 }
 
 function CheckPlayer(player, previousPlayer, dayCounter, daysHeld) {
@@ -56,6 +91,15 @@ function CheckPlayer(player, previousPlayer, dayCounter, daysHeld) {
 
             previousPlayerTable.appendChild(previousPlayerToDate);
             previousPlayerTable.appendChild(previousPlayerDaysHeld);
+
+            if (daysHeld >= 50) {
+                longestReignTimes.push({
+                    playerName: previousPlayer,
+                    startDate: GetDate(dayCounter, daysHeld),
+                    endDate: dateOverTurned,
+                    reignLength: daysHeld
+                });
+            }
         }
         
         tableRow.appendChild(playerName);
@@ -65,6 +109,17 @@ function CheckPlayer(player, previousPlayer, dayCounter, daysHeld) {
 
         return;
     }
+}
+
+function GetDate(dayCounter, daysHeld) {
+    let date = new Date();
+    date.setDate(date.getDate() - (topRankPlayers.length - dayCounter + daysHeld));
+
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const month = months[date.getMonth()];
+    const day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+    return month + "-" + day + "-" + date.getFullYear();
 }
 
 function SaveDate(dayCounter) {

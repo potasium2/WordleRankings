@@ -1015,6 +1015,24 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     rukir.DetermineRating(13, 19, 5, 4.3);
     khana.DetermineRating(19, 19, 6, 4.3);
     SaveRankings(ratingSystemIteration);
+
+    // Day 77: Wordle #1507
+    potasium.DetermineRating(1, 15, 2, 4);
+    izuna.DetermineRating(2, 15, 3, 4);
+    brix.DetermineRating(2, 15, 3, 4);
+    squiddy.DetermineRating(4, 15, 3, 4);
+    stano.DetermineRating(4, 15, 3, 4);
+    april.DetermineRating(6, 15, 4, 4);
+    lucy.DetermineRating(6, 15, 4, 4);
+    nyfen.DetermineRating(6, 15, 4, 4);
+    juanfan.DetermineRating(6, 15, 4, 4);
+    aidan.DetermineRating(10, 15, 5, 4);
+    lightning.DetermineRating(10, 15, 5, 4);
+    khana.DetermineRating(10, 15, 5, 4);
+    creeper.DetermineRating(13, 15, 6, 4);
+    daphne.DetermineRating(13, 15, 6, 4);
+    rukir.DetermineRating(13, 15, 6, 4);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }
