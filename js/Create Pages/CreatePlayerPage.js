@@ -1,5 +1,5 @@
 import { RenderRatingGraph, RenderRankGraph } from "../Player Calculation/RenderGraph.js";
-import { CURRENT_SYSTEM } from "../Globals.js";
+import { CURRENT_SYSTEM, DATE_OFFSET } from "../Globals.js";
 const PLAYER_CONTAINER = document.getElementById("playerInformationContainer");
 
 function AddProfilePicture(playerData) {
@@ -68,7 +68,7 @@ function CreateInfoContainer(playerData, luma, ratingSystemIteration) {
     rankValue.setAttribute("style", "color:" + accentBase);
 
     let date = new Date();
-    date.setDate(date.getDate() - playerData.timeSincePeakRank);
+    date.setDate(date.getDate() - playerData.timeSincePeakRank - DATE_OFFSET);
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const peakRankMonth = months[date.getMonth()];
 

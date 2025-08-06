@@ -1,3 +1,4 @@
 const CURRENT_SYSTEM = 1.1; // 2025_08_03
+const DATE_OFFSET = 0;
 
-export { CURRENT_SYSTEM }
+export { CURRENT_SYSTEM, DATE_OFFSET }

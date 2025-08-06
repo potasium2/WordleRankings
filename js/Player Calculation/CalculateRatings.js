@@ -1033,6 +1033,23 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     daphne.DetermineRating(13, 15, 6, 4);
     rukir.DetermineRating(13, 15, 6, 4);
     SaveRankings(ratingSystemIteration);
+
+    // Day 78: Wordle #1508
+    creeper.DetermineRating(1, 14, 3, 4.1);
+    brix.DetermineRating(1, 14, 3, 4.1);
+    izuna.DetermineRating(1, 14, 3, 4.1);
+    squiddy.DetermineRating(1, 14, 3, 4.1);
+    april.DetermineRating(5, 14, 4, 4.1);
+    fletch.DetermineRating(5, 14, 4, 4.1);
+    juanfan.DetermineRating(5, 14, 4, 4.1);
+    khana.DetermineRating(5, 14, 4, 4.1);
+    potasium.DetermineRating(5, 14, 4, 4.1);
+    rukir.DetermineRating(5, 14, 4, 4.1);
+    aidan.DetermineRating(11, 14, 6, 4.1);
+    daphne.DetermineRating(11, 14, 6, 4.1);
+    nyfen.DetermineRating(11, 14, 6, 4.1);
+    stano.DetermineRating(11, 14, 6, 4.1);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }

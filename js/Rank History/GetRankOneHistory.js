@@ -1,4 +1,5 @@
 import { CalculateRatings, topRankPlayers } from "../Player Calculation/CalculateRatings.js";
+import { DATE_OFFSET } from "../Globals.js";
 const RANK_HISTORY_TABLE = document.getElementById("rankHistory");
 const LONGEST_INDIVIDUAL_TABLE = document.getElementById("longestTime");
 
@@ -113,7 +114,7 @@ function CheckPlayer(player, previousPlayer, dayCounter, daysHeld) {
 
 function GetDate(dayCounter, daysHeld) {
     let date = new Date();
-    date.setDate(date.getDate() - (topRankPlayers.length - dayCounter + daysHeld));
+    date.setDate(date.getDate() - (topRankPlayers.length - dayCounter + daysHeld) - DATE_OFFSET);
 
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const month = months[date.getMonth()];
@@ -124,7 +125,7 @@ function GetDate(dayCounter, daysHeld) {
 
 function SaveDate(dayCounter) {
     let date = new Date();
-    date.setDate(date.getDate() - (topRankPlayers.length - dayCounter));
+    date.setDate(date.getDate() - (topRankPlayers.length - dayCounter) - DATE_OFFSET);
 
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const month = months[date.getMonth()];
