@@ -1,5 +1,5 @@
 const siteVersionDiv = document.getElementById("siteVersion");
-const siteVersion = "Wordle Ratings v1.1.2c";
+const siteVersion = "Wordle Ratings v1.1.2d";
 
 if (siteVersionDiv !== null)
     siteVersionDiv.textContent = siteVersion;

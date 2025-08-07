@@ -1050,6 +1050,27 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(11, 14, 6, 4.1);
     stano.DetermineRating(11, 14, 6, 4.1);
     SaveRankings(ratingSystemIteration);
+
+    // Day 79: Wordle #1509
+    potasium.DetermineRating(1, 14, 1, 3.7);
+    april.DetermineRating(2, 14, 2, 3.7);
+    creeper.DetermineRating(3, 14, 3, 3.7);
+    lucy.DetermineRating(3, 14, 3, 3.7);
+    izuna.DetermineRating(3, 14, 3, 3.7);
+    aidan.DetermineRating(6, 14, 4, 3.7);
+    brix.DetermineRating(6, 14, 4, 3.7);
+    khana.DetermineRating(6, 14, 4, 3.7);
+    squiddy.DetermineRating(6, 14, 4, 3.7);
+    nyfen.DetermineRating(6, 14, 4, 3.7);
+    rukir.DetermineRating(6, 14, 4, 3.7);
+    daphne.DetermineRating(12, 14, 5, 3.7);
+    juanfan.DetermineRating(12, 14, 5, 3.7);
+    stano.DetermineRating(12, 14, 5, 3.7);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 80: Wordle #1510
+    khana.DetermineRating(1, 2, 6, 4.0);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }
