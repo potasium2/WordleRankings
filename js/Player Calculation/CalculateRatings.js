@@ -1017,21 +1017,21 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     SaveRankings(ratingSystemIteration);
 
     // Day 77: Wordle #1507
-    potasium.DetermineRating(1, 15, 2, 4);
-    izuna.DetermineRating(2, 15, 3, 4);
-    brix.DetermineRating(2, 15, 3, 4);
-    squiddy.DetermineRating(4, 15, 3, 4);
-    stano.DetermineRating(4, 15, 3, 4);
-    april.DetermineRating(6, 15, 4, 4);
-    lucy.DetermineRating(6, 15, 4, 4);
-    nyfen.DetermineRating(6, 15, 4, 4);
-    juanfan.DetermineRating(6, 15, 4, 4);
-    aidan.DetermineRating(10, 15, 5, 4);
-    lightning.DetermineRating(10, 15, 5, 4);
-    khana.DetermineRating(10, 15, 5, 4);
-    creeper.DetermineRating(13, 15, 6, 4);
-    daphne.DetermineRating(13, 15, 6, 4);
-    rukir.DetermineRating(13, 15, 6, 4);
+    potasium.DetermineRating(1, 15, 2, 4.0);
+    izuna.DetermineRating(2, 15, 3, 4.0);
+    brix.DetermineRating(2, 15, 3, 4.0);
+    squiddy.DetermineRating(4, 15, 3, 4.0);
+    stano.DetermineRating(4, 15, 3, 4.0);
+    april.DetermineRating(6, 15, 4, 4.04);
+    lucy.DetermineRating(6, 15, 4, 4.0);
+    nyfen.DetermineRating(6, 15, 4, 4.0);
+    juanfan.DetermineRating(6, 15, 4, 4.0);
+    aidan.DetermineRating(10, 15, 5, 4.0);
+    lightning.DetermineRating(10, 15, 5, 4.0);
+    khana.DetermineRating(10, 15, 5, 4.0);
+    creeper.DetermineRating(13, 15, 6, 4.0);
+    daphne.DetermineRating(13, 15, 6, 4.0);
+    rukir.DetermineRating(13, 15, 6, 4.0);
     SaveRankings(ratingSystemIteration);
 
     // Day 78: Wordle #1508
@@ -1055,21 +1055,35 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     potasium.DetermineRating(1, 14, 1, 3.7);
     april.DetermineRating(2, 14, 2, 3.7);
     creeper.DetermineRating(3, 14, 3, 3.7);
-    lucy.DetermineRating(3, 14, 3, 3.7);
     izuna.DetermineRating(3, 14, 3, 3.7);
+    lucy.DetermineRating(3, 14, 3, 3.7);
     aidan.DetermineRating(6, 14, 4, 3.7);
     brix.DetermineRating(6, 14, 4, 3.7);
     khana.DetermineRating(6, 14, 4, 3.7);
-    squiddy.DetermineRating(6, 14, 4, 3.7);
     nyfen.DetermineRating(6, 14, 4, 3.7);
     rukir.DetermineRating(6, 14, 4, 3.7);
+    squiddy.DetermineRating(6, 14, 4, 3.7);
     daphne.DetermineRating(12, 14, 5, 3.7);
     juanfan.DetermineRating(12, 14, 5, 3.7);
     stano.DetermineRating(12, 14, 5, 3.7);
     SaveRankings(ratingSystemIteration);
 
     // Day 80: Wordle #1510
-    khana.DetermineRating(1, 2, 6, 4.0);
+    april.DetermineRating(1, 15, 3, 4.0);
+    creeper.DetermineRating(1, 15, 3, 4.0);
+    juanfan.DetermineRating(1, 15, 3, 4.0);
+    daphne.DetermineRating(4, 15, 4, 4.0);
+    potasium.DetermineRating(4, 15, 4, 4.0);
+    squiddy.DetermineRating(4, 15, 4, 4.0);
+    stano.DetermineRating(4, 15, 4, 4.0);
+    aidan.DetermineRating(8, 15, 5, 4.0);
+    brix.DetermineRating(8, 15, 5, 4.0);
+    nyfen.DetermineRating(8, 15, 5, 4.0);
+    izuna.DetermineRating(8, 15, 5, 4.0);
+    khana.DetermineRating(12, 15, 6, 4.0);
+    rukir.DetermineRating(12, 15, 6, 4.0);
+    lightning.DetermineRating(14, 15, 7, 4.0);
+    lucy.DetermineRating(14, 15, 7, 4.0);
     SaveRankings(ratingSystemIteration);
 }
 

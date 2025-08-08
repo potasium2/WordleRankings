@@ -124,6 +124,7 @@ function CompareCurrentRank(player) {
         rankLastMonth = player.priorRanks[0];
     else
         rankLastMonth = player.priorRanks[player.priorRanks.length - 15];
+    
     const currentRank = player.priorRanks[player.priorRanks.length - 1];
     return rankLastMonth - currentRank;
 }
