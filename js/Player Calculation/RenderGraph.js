@@ -1,10 +1,10 @@
-const maxNumberDaysToShow = 50;
+const maxNumberDaysToShow = 50; // The way I meant to handle this in the for loop has been wrong the entire time :)
 
 function RenderRankGraph(playerData) {
     let xValues = [];
     let yValues = [];
 
-    for (let i = 1; i < maxNumberDaysToShow + 2; i++) {
+    for (let i = 1; i < maxNumberDaysToShow + 1; i++) {
         const pastRanking = playerData.priorRanks[playerData.priorRanks.length - i];
         const pastRating = playerData.priorRatings[playerData.priorRatings.length - i];
         if (pastRating < 100 || pastRating == null)
@@ -94,7 +94,7 @@ function RenderRatingGraph(playerData) {
     let xValues = [];
     let yValues = [];
 
-    for (let i = 1; i < maxNumberDaysToShow + 2; i++) {
+    for (let i = 1; i < maxNumberDaysToShow + 1; i++) {
         const pastRating = playerData.priorRatings[playerData.priorRatings.length - i];
         if (pastRating < 100 || pastRating == null)
             break;

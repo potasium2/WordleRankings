@@ -57,7 +57,7 @@ function CalculateRankHistory() {
         indivToDate.textContent = reign.endDate;
 
         const timeSpent = document.createElement("td");
-        timeSpent.textContent = reign.reignLength;
+        timeSpent.textContent = reign.reignLength + " Days";
 
         reignRow.appendChild(indivReign);
         reignRow.appendChild(indivFromDate);

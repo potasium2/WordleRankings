@@ -1085,6 +1085,23 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lightning.DetermineRating(14, 15, 7, 4.0);
     lucy.DetermineRating(14, 15, 7, 4.0);
     SaveRankings(ratingSystemIteration);
+
+    // Day 81: Wordle #1511
+    squiddy.DetermineRating(1, 14, 4, 4.5);
+    juanfan.DetermineRating(1, 14, 4, 4.5);
+    rukir.DetermineRating(1, 14, 4, 4.5);
+    aidan.DetermineRating(4, 14, 5, 4.5);
+    april.DetermineRating(4, 14, 5, 4.5);
+    brix.DetermineRating(4, 14, 5, 4.5);
+    daphne.DetermineRating(4, 14, 5, 4.5);
+    izuna.DetermineRating(4, 14, 5, 4.5);
+    khana.DetermineRating(4, 14, 5, 4.5);
+    nyfen.DetermineRating(4, 14, 5, 4.5);
+    creeper.DetermineRating(11, 14, 6, 4.5);
+    potasium.DetermineRating(11, 14, 6, 4.5);
+    stano.DetermineRating(11, 14, 6, 4.5);
+    lightning.DetermineRating(11, 14, 6, 4.5);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }
