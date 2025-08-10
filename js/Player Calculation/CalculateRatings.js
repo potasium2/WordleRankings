@@ -101,16 +101,16 @@ function SaveRankings(ratingSystemIteration) {
     let rank = 0;
 
     if (ratingSystemIteration !== CURRENT_SYSTEM) {
-        playersArr.sort(function(a, b) {return b.altRating - a.altRating});
+        playersArr.sort(function(a, b) {return b.altRating[ratingSystemIteration] - a.altRating[ratingSystemIteration]});
 
         playersArr.forEach(player => {
-            if (player.altRating > 0) {
+            if (player.altRating[ratingSystemIteration] > 0) {
                 rank++;
 
                 if (rank == 1)
                     topRankPlayers.push(player);
 
-                player.SaveAlternativeRankingInfo(rank);
+                player.SaveAlternativeRankingInfo(rank, ratingSystemIteration);
             }
         });
     } else {

@@ -106,7 +106,7 @@ function CreateInfoContainer(playerData, luma, ratingSystemIteration) {
 
     let ratingForDisplay = playerData.rating;
     if (ratingSystemIteration !== CURRENT_SYSTEM)
-        ratingForDisplay = playerData.altRating;
+        ratingForDisplay = playerData.altRating[ratingSystemIteration];
 
     const wordleRatingValue = document.createElement("p");
     wordleRatingValue.setAttribute("class", "currentRating");

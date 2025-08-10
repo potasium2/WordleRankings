@@ -4,7 +4,7 @@ const TABLE = document.getElementById("playerListingBody");
 let rank = 0;
 
 function CreateTableRow(player, ratingSystemIteration) {
-    let playerRatingDisplay = ratingSystemIteration === CURRENT_SYSTEM ? player.rating : player.altRating;
+    let playerRatingDisplay = ratingSystemIteration === CURRENT_SYSTEM ? player.rating : player.altRating[ratingSystemIteration];
 
     let accent = "607090";
     if (ratingSystemIteration !== CURRENT_SYSTEM)
