@@ -1373,6 +1373,25 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
     izuna.DetermineRating(11, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
+
+    // Day 83: Wordle #1513
+    dailyDifficulty = 4.1;
+    playerCount = 13;
+
+    brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    izuna.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    april.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    creeper.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    stano.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    rukir.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }
