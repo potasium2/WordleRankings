@@ -1392,6 +1392,24 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     rukir.DetermineRating(9, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
+
+    // Day 84: Wordle #1514
+    dailyDifficulty = 3.7;
+    playerCount = 12;
+
+    khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    april.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    izuna.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    nyfen.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    potasium.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }

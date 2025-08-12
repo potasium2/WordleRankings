@@ -51,12 +51,13 @@ tr {
 }
 
 #rankingNumber {
+    color: #e0e0e0;
     padding-left: 12px;
     width: 5%;
 }
 
 #playerName {
-    color: #fdfdfd;
+    color: #e0e0e0;
 }
 
 #wordleRating {

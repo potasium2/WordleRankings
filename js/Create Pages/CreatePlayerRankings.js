@@ -56,7 +56,6 @@ function CreateTableRow(player, ratingSystemIteration) {
     const rankingNumber = document.createElement("td");
     rankingNumber.setAttribute("class", "playerRankingInfo")
     rankingNumber.setAttribute("id", "rankingNumber")
-    rankingNumber.setAttribute("style", "color:" + accentBase);
     rankingNumber.textContent = "#" + rank;
 
     const rankChange = document.createElement("td");
@@ -78,14 +77,12 @@ function CreateTableRow(player, ratingSystemIteration) {
     const wordleRating = document.createElement("td");
     wordleRating.setAttribute("class", "playerRankingInfo");
     wordleRating.setAttribute("id", "wordleRating");
-    wordleRating.setAttribute("style", "color:" + accentBase);
     wordleRating.setAttribute("title", Math.round(playerRatingDisplay * 100) / 100 + "wr");
     wordleRating.textContent = Math.round(playerRatingDisplay) + "wr";
 
     const heldRankOne = document.createElement("td");
     heldRankOne.setAttribute("class", "playerRankingInfo");
     heldRankOne.setAttribute("id", "heldNumberOne");
-    heldRankOne.setAttribute("style", "color:" + accentBase);
     heldRankOne.textContent = player.timesTakenFirst;
 
     const playerIcon = document.createElement("td");
@@ -103,7 +100,6 @@ function CreateTableRow(player, ratingSystemIteration) {
     const playerName = document.createElement("p");
     playerName.setAttribute("class", "playerRankingInfo");
     playerName.setAttribute("id", "playerName");
-    playerName.setAttribute("style", "color:" + accentBase);
     playerName.textContent = player.name;
 
     playerIcon.appendChild(playerImage);
