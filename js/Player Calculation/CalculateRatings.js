@@ -1400,15 +1400,33 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(3, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(3, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(3, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 85: Wordle #1515
+    dailyDifficulty = 4.0;
+    playerCount = 12;
+
+    izuna.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    april.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    creeper.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    potasium.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(12, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 }
 

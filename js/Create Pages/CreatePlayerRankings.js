@@ -66,12 +66,12 @@ function CreateTableRow(player, ratingSystemIteration) {
 
     if (rankDifference > 0) {
         rankChange.innerHTML = "🠅" + rankDifference;
-        rankChange.setAttribute("style", "color:" + rankUpAccent)
+        rankChange.setAttribute("style", "color:" + rankUpAccent);
     }
 
     if (rankDifference < 0) {
         rankChange.innerHTML = "🠇" + Math.abs(rankDifference);
-        rankChange.setAttribute("style", "color:" + rankDownAccent)
+        rankChange.setAttribute("style", "color:" + rankDownAccent);
     }
 
     const wordleRating = document.createElement("td");
@@ -116,7 +116,7 @@ function CreateTableRow(player, ratingSystemIteration) {
 
 function CompareCurrentRank(player) {
     let rankLastMonth;
-    if (player.priorRanks.length < 14)
+    if (player.priorRanks.length < 15)
         rankLastMonth = player.priorRanks[0];
     else
         rankLastMonth = player.priorRanks[player.priorRanks.length - 15];
