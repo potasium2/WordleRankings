@@ -39,7 +39,7 @@ class Player {
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.13165) * (positionBonus + guessBonus) : overallBonus;
 
-        this.rating += Math.round(overallBonus) - (Math.max(0, eloScaling - 1) * positionPenalty);
+        this.rating += Math.round(overallBonus) - (Math.max(0, eloScaling - 1) * Math.max(1, positionPenalty));
 
         if (this.rating <= 100)
             this.rating = 100;
