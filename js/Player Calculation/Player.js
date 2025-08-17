@@ -24,7 +24,6 @@ class Player {
 
         if (guessCount >= 7) {
             this.rating -= Math.round(wordDifficulty * Math.pow(guessCount / 3.0, 1.65));
-            playerCount = scorePosition;
         }
 
         const eloScaling = Math.min(Math.max(Math.pow(this.rating / 1000.0, 7.0), 1.0), 30.0);

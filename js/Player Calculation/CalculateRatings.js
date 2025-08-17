@@ -1509,6 +1509,23 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     daphne.DetermineRating(13, playerCount, 7, dailyDifficulty);
     khana.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
+
+    // Day 90: Wordle #1520
+    dailyDifficulty = 3.8;
+    playerCount = 11;
+
+    potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
+    brix.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    khana.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    lucy.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    lightning.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    stano.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
 }
 
 export { CalculateRatings, playersArr, topRankPlayers }
