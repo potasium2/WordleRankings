@@ -3,9 +3,11 @@
     <head>
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/leaderboard.css">
+        <link rel="stylesheet" href="../css/site version dropdown.css">
 
         <script type="module" src="../js/MainToo.js"></script>
         <script type="module" src="../js/siteVersion.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <title>Old Wordle Rankings</title>
     </head>
     <body>
@@ -16,6 +18,10 @@
             <a class="headerButton" id="infoHeaderButton" href="info.html">Info</a>
         </div>
         <div id="siteVersion" onclick="location.href='changelog.html'"></div>
+        <select name="rankingsVesion" id="leaderboardVersion">
+            <option value="0">Rankings: Version 1</option>
+            <option value="1">Rankings: Version 2</option>
+        </select>
         <table id="playerListingContainer">
             <tbody id="playerListingBody">
                 <tr class="playerListingHeader" style="background-color:none">

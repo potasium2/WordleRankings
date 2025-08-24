@@ -1,7 +1,16 @@
 import { CalculateRatings, playersArr } from './Player Calculation/CalculateRatings.js';
 import { CreateRankingsTable } from './Create Pages/CreatePlayerRankings.js';
 
-CalculateRatings(0);
-playersArr.sort(function(a, b) {return b.altRating - a.altRating});
+const LEADERBOARD_VERSION = document.getElementById("leaderboardVersion");
 
-CreateRankingsTable(playersArr, 0);
+CreateTable();
+LEADERBOARD_VERSION.addEventListener("change", e => {CreateTable()})
+
+function CreateTable() {
+    const ratingSystemIteration = LEADERBOARD_VERSION.value;
+
+    CalculateRatings(ratingSystemIteration);
+    playersArr.sort(function(a, b) {return b.altRating[ratingSystemIteration] - a.altRating[ratingSystemIteration]});
+
+    CreateRankingsTable(playersArr, ratingSystemIteration);
+}

@@ -104,9 +104,7 @@ function CreateInfoContainer(playerData, luma, ratingSystemIteration) {
     wordleRatingText.setAttribute("style", "color:" + accentSecondary);
     wordleRatingText.textContent = "Wordle Rating";
 
-    let ratingForDisplay = playerData.rating;
-    if (ratingSystemIteration !== CURRENT_SYSTEM)
-        ratingForDisplay = playerData.altRating;
+    let ratingForDisplay = ratingSystemIteration === CURRENT_SYSTEM ? playerData.rating : playerData.altRating[ratingSystemIteration];
 
     const wordleRatingValue = document.createElement("p");
     wordleRatingValue.setAttribute("class", "currentRating");

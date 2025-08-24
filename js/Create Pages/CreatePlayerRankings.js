@@ -4,7 +4,7 @@ const TABLE = document.getElementById("playerListingBody");
 let rank = 0;
 
 function CreateTableRow(player, ratingSystemIteration) {
-    let playerRatingDisplay = ratingSystemIteration === CURRENT_SYSTEM ? player.rating : player.altRating;
+    let playerRatingDisplay = ratingSystemIteration === CURRENT_SYSTEM ? player.rating : player.altRating[ratingSystemIteration];
 
     let accent = "607090";
     if (ratingSystemIteration !== CURRENT_SYSTEM)
@@ -14,9 +14,9 @@ function CreateTableRow(player, ratingSystemIteration) {
         if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 60])
             return document.createElement("div");
     }
-    
+
     if (player.priorRanks.length > 31) {
-        if (playerRatingDisplay== player.priorRatings[player.priorRatings.length - 30])
+        if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 30])
             accent = "808080";
     }
 
@@ -126,9 +126,19 @@ function CompareCurrentRank(player) {
 }
 
 function CreateRankingsTable(playersArr, ratingSystemIteration = CURRENT_SYSTEM) {
+    const domPlayerListings = document.getElementById("playerListings")
+    if (domPlayerListings != null)
+        TABLE.removeChild(domPlayerListings)
+
+    const playerListings = document.createElement("div");
+    playerListings.setAttribute("id", "playerListings");
+    
     playersArr.forEach(player => {
-        TABLE.appendChild(CreateTableRow(player, ratingSystemIteration));
+        playerListings.appendChild(CreateTableRow(player, ratingSystemIteration));
     });
+
+    TABLE.appendChild(playerListings);
+    rank = 0;
 }
 
 export { CreateRankingsTable }
