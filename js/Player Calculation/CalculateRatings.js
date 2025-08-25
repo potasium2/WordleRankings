@@ -1664,21 +1664,37 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 97: Wordle #1527
     dailyDifficulty = 4.2;
-    playerCount = 13;
+    playerCount = 15;
 
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(3, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(3, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(3, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    jacob.DetermineRating(3, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(3, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    squiddy.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    stano.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    creeper.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    potasium.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    squiddy.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    stano.DetermineRating(13, playerCount, 6, dailyDifficulty);
+    creeper.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    potasium.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 98: Wordle #1528
+    dailyDifficulty = 4.6;
+    playerCount = 8;
+
+    potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    brix.DetermineRating(2, playerCount, 5, dailyDifficulty);
+    izuna.DetermineRating(2, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(2, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(5, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(5, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(5, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(8, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 }
 
