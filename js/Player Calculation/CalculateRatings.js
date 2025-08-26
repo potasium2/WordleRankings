@@ -1685,17 +1685,19 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 98: Wordle #1528
     dailyDifficulty = 4.6;
-    playerCount = 8;
+    playerCount = 10;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 5, dailyDifficulty);
     izuna.DetermineRating(2, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(2, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(5, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(5, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(5, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(8, playerCount, 7, dailyDifficulty);
+    panda.DetermineRating(2, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(6, playerCount, 6, dailyDifficulty);
+    creeper.DetermineRating(6, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(6, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(6, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(10, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 }
 
-export { CalculateRatings, playersArr, topRankPlayers }
+export { CalculateRatings, playersArr, topRankPlayers, baseRating }

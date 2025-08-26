@@ -8,19 +8,20 @@
         <script type="module" src="../js/MainToo.js"></script>
         <script type="module" src="../js/siteVersion.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <title>Old Wordle Rankings</title>
+        <title>Alternate Rankings</title>
     </head>
     <body>
         <div class="header">
             <a class="headerButton" id="rankingsHeaderButton" href="leaderboard.html">Rankings</a>
             <a class="headerButton" id="topRankHistoryButton" href="rank one history.html">Top Rankings History</a>
-            <a class="headerButton" id="oldRankingsHeaderButton">Old Rankings</a>
+            <a class="headerButton" id="oldRankingsHeaderButton">Alternate Rankings</a>
             <a class="headerButton" id="infoHeaderButton" href="info.html">Info</a>
         </div>
         <div id="siteVersion" onclick="location.href='changelog.html'"></div>
         <select name="rankingsVesion" id="leaderboardVersion">
             <option value="0">Rankings: Version 1</option>
             <option value="1">Rankings: Version 2</option>
+            <option value="3">Upcoming Rework</option>
         </select>
         <table id="playerListingContainer">
             <tbody id="playerListingBody">

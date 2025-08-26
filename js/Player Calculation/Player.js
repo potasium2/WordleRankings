@@ -1,3 +1,6 @@
+import { CURRENT_SYSTEM } from '../Globals.js';
+import { baseRating } from './CalculateRatings.js';
+
 class Player {
     constructor(name, rating, accentColor = "#607799", gifProfilePic = false) {
         this.name = name;
@@ -26,6 +29,7 @@ class Player {
         this.tags.push(tagged);
         this.DetermineRatingV1(scorePosition, playerCount, guessCount, wordDifficulty);
         this.DetermineRatingV2(scorePosition, playerCount, guessCount, wordDifficulty);
+        this.DetermineReworkRating(scorePosition, playerCount, guessCount, wordDifficulty);
 
         if (scorePosition <= 0 || playerCount <= 1) {
             return;
@@ -37,10 +41,10 @@ class Player {
             this.rating -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
         }
 
-        const eloScaling = Math.min(Math.max(Math.pow(this.rating / 1000.0, 7.0), 1.0), 20.0);
+        const eloScaling = Math.min(Math.max(Math.pow(this.rating / baseRating, 6.95), 1.0), 20.0);
 
         const scalingFactor = 4.0;
-        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, 1000.0 / this.rating));
+        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, baseRating / this.rating));
 
         const positionBonus = (-Math.pow(positionScalingFactor * scalingFactor * (scorePosition / playerCount), 0.8)) + 7.5;
         const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
@@ -120,6 +124,33 @@ class Player {
 
         return;
     }
+    
+    DetermineReworkRating(scorePosition, playerCount, guessCount, wordDifficulty) {
+        if (scorePosition <= 0 || playerCount <= 1) {
+            return;
+        }
+
+        if (guessCount >= 6) {
+            this.altRating[CURRENT_SYSTEM + 1]  -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
+        }
+
+        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1]  / baseRating, 6.95), 1.0), 20.0);
+
+        const scalingFactor = 4.0;
+        const positionBonus = (-Math.pow(scalingFactor * scalingFactor * (scorePosition / playerCount), 0.8)) + 7.5;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, wordDifficulty / 6.0) : -Math.pow(Math.abs(wordDifficulty - guessCount), wordDifficulty / 2.0);;
+
+        let overallBonus = scalingFactor * (positionBonus + guessBonus);
+        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 0.5) * (positionBonus + guessBonus) : overallBonus;
+        
+        if (scorePosition == 1)
+            overallBonus += positionBonus;
+
+        this.altRating[CURRENT_SYSTEM + 1]  += Math.round(overallBonus) - Math.max(0, eloScaling - 1);
+
+        if (this.altRating[CURRENT_SYSTEM + 1]  <= 100)
+            this.altRating[CURRENT_SYSTEM + 1]  = 100;
+    }
 
     SetRating(newRating) {
         this.priorRanks = [];
@@ -129,6 +160,9 @@ class Player {
         this.rating = newRating;
         this.altRating[0] = newRating;
         this.altRating[1] = newRating;
+        this.altRating[CURRENT_SYSTEM + 1] = newRating;
+
+        this.timesTakenFirst = 0;
     }
 
     SaveRankingInfo(rank) {
