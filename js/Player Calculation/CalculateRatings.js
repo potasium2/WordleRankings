@@ -1685,18 +1685,54 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 98: Wordle #1528
     dailyDifficulty = 4.6;
-    playerCount = 10;
+    playerCount = 14;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    juanfan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(3, playerCount, 5, dailyDifficulty);
+    izuna.DetermineRating(3, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(3, playerCount, 5, dailyDifficulty);
+    panda.DetermineRating(3, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    creeper.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    stano.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 99: Wordle #1529
+    dailyDifficulty = 4.7;
+    playerCount = 14;
+
+    brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    lucy.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    potasium.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    creeper.DetermineRating(4, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(4, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(4, playerCount, 5, dailyDifficulty);
+    panda.DetermineRating(4, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    rukir.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+
+    // Day 100: Wordle #1530 - DAY 100 YIPPEE
+    dailyDifficulty = 4.0;
+    playerCount = 6;
+
+    potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(2, playerCount, 5, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 5, dailyDifficulty);
-    izuna.DetermineRating(2, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(2, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(2, playerCount, 5, dailyDifficulty);
-    panda.DetermineRating(2, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    creeper.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(10, playerCount, 7, dailyDifficulty);
+    squiddy.DetermineRating(6, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 }
 
