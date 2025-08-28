@@ -65,6 +65,12 @@ tr {
     width: 15%;
 }
 
+#averageGuessCount {
+    color: #e0e0e0;
+    width: 15%;
+}
+
+
 #heldNumberOne {
     color: #e0e0e0;
     width: 15%;
@@ -80,6 +86,11 @@ tr {
 
 #wordleRatingHeader {
     color: white;
+    width: 15%;
+}
+
+#averageGuessHeader {
+    color: #e0e0e0;
     width: 15%;
 }
 

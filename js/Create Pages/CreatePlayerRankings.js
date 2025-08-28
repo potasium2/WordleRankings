@@ -80,6 +80,19 @@ function CreateTableRow(player, ratingSystemIteration) {
     wordleRating.setAttribute("title", Math.round(playerRatingDisplay * 100) / 100 + "wr");
     wordleRating.textContent = Math.round(playerRatingDisplay) + "wr";
 
+    const avgGuessDisplay = (Math.round(player.averageGuess / player.timesPlayed * 100) / 100).toLocaleString("en-US");
+    const averageGuessCount = document.createElement("td");
+    averageGuessCount.setAttribute("class", "playerRankingInfo");
+    averageGuessCount.setAttribute("id", "averageGuessCount");
+    if (avgGuessDisplay == "NaN")
+        averageGuessCount.textContent = "idk";
+    else if (avgGuessDisplay.length == 3)
+        averageGuessCount.textContent = avgGuessDisplay + "0";
+    else if (avgGuessDisplay.length == 1)
+        averageGuessCount.textContent = avgGuessDisplay + ".00";
+    else
+        averageGuessCount.textContent = avgGuessDisplay;
+
     const heldRankOne = document.createElement("td");
     heldRankOne.setAttribute("class", "playerRankingInfo");
     heldRankOne.setAttribute("id", "heldNumberOne");
@@ -109,6 +122,7 @@ function CreateTableRow(player, ratingSystemIteration) {
     tableListing.appendChild(rankChange);
     tableListing.appendChild(playerIcon);
     tableListing.appendChild(wordleRating);
+    tableListing.appendChild(averageGuessCount);
     tableListing.appendChild(heldRankOne);
 
     return tableListing;

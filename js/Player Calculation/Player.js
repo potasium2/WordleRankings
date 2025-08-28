@@ -16,6 +16,9 @@ class Player {
         this.priorRatings = [];
         this.tags = [];
 
+        this.averageGuess = 0;
+        this.timesPlayed = 0;
+
         this.EmplaceOldRatings(rating, 2)
     }
 
@@ -36,6 +39,8 @@ class Player {
         }
     
         this.timesTakenFirst = scorePosition == 1 ? this.timesTakenFirst + 1 : this.timesTakenFirst;
+        this.timesPlayed = this.timesPlayed + 1;
+        this.averageGuess = this.averageGuess + guessCount;
 
         if (guessCount >= 7) {
             this.rating -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
