@@ -109,19 +109,19 @@ tr {
     float: left;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1240px) {
     #playerListingContainer {
         width: 55%;
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1080px) {
     #playerListingContainer {
         width: 65%;
     }
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 940px) {
     #playerListingContainer {
         width: 75%;
     }
