@@ -143,7 +143,7 @@ class Player {
 
         const scalingFactor = 4.0;
         const positionBonus = (-Math.pow(scalingFactor * scalingFactor * (scorePosition / playerCount), 0.8)) + 7.5;
-        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, wordDifficulty / 6.0) : -Math.pow(Math.abs(wordDifficulty - guessCount), wordDifficulty / 2.0);;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, wordDifficulty / 6.0) : -Math.pow(Math.abs(wordDifficulty - guessCount), wordDifficulty / 2.0);
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 0.5) * (positionBonus + guessBonus) : overallBonus;
