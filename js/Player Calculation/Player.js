@@ -61,6 +61,8 @@ class Player {
 
         if (this.rating <= 100)
             this.rating = 100;
+
+        return;
     }
     
     DetermineRatingV1(scorePosition, playerCount, guessCount, wordDifficulty) {
@@ -135,26 +137,24 @@ class Player {
             return;
         }
 
-        if (guessCount >= 6) {
-            this.altRating[CURRENT_SYSTEM + 1]  -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
+        if (guessCount >= 7) {
+            this.altRating[CURRENT_SYSTEM + 1] -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 4.0, 1.35));
         }
 
-        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1]  / baseRating, 6.95), 1.0), 20.0);
+        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / baseRating, 4.95), 1.0), 12.5);
 
         const scalingFactor = 4.0;
-        const positionBonus = (-Math.pow(scalingFactor * scalingFactor * (scorePosition / playerCount), 0.8)) + 7.5;
-        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, wordDifficulty / 6.0) : -Math.pow(Math.abs(wordDifficulty - guessCount), wordDifficulty / 2.0);
+
+        const positionBonus = (-Math.pow(scalingFactor * (scorePosition / playerCount), 0.8)) + 3.0;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
-        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 0.5) * (positionBonus + guessBonus) : overallBonus;
-        
-        if (scorePosition == 1)
-            overallBonus += positionBonus;
+        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.105) * (positionBonus + guessBonus) : overallBonus;
 
-        this.altRating[CURRENT_SYSTEM + 1]  += Math.round(overallBonus) - Math.max(0, eloScaling - 1);
+        this.altRating[CURRENT_SYSTEM + 1] += Math.round(overallBonus) - Math.max(0, eloScaling - 1);
 
-        if (this.altRating[CURRENT_SYSTEM + 1]  <= 100)
-            this.altRating[CURRENT_SYSTEM + 1]  = 100;
+        if (this.altRating[CURRENT_SYSTEM + 1] <= 100)
+            this.altRating[CURRENT_SYSTEM + 1] = 100;
     }
 
     SetRating(newRating) {
@@ -177,6 +177,7 @@ class Player {
         this.peakRank = this.peakRank == null ? rank : rank < this.peakRank && rank > 0 ? rank : this.peakRank;
         this.priorRanks.push(rank);
         this.priorRatings.push(this.rating);
+        
     }
 
     SaveAlternativeRankingInfo(rank, ratingSystemVersion) {
