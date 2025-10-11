@@ -137,24 +137,22 @@ class Player {
             return;
         }
 
-        if (guessCount >= 7) {
-            this.altRating[CURRENT_SYSTEM + 1] -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 4.0, 1.35));
-        }
-
-        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / baseRating, 4.95), 1.0), 12.5);
+        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / baseRating, 6.95), 1.0), 10.0);
 
         const scalingFactor = 4.0;
 
         const positionBonus = (-Math.pow(scalingFactor * (scorePosition / playerCount), 0.8)) + 3.0;
-        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 5.0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.105) * (positionBonus + guessBonus) : overallBonus;
 
-        this.altRating[CURRENT_SYSTEM + 1] += Math.round(overallBonus) - Math.max(0, eloScaling - 1);
+        this.altRating[CURRENT_SYSTEM + 1] += overallBonus - Math.max(0, eloScaling - 1);
 
         if (this.altRating[CURRENT_SYSTEM + 1] <= 100)
             this.altRating[CURRENT_SYSTEM + 1] = 100;
+
+        return;
     }
 
     SetRating(newRating) {

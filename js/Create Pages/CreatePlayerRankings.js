@@ -84,6 +84,7 @@ function CreateTableRow(player, ratingSystemIteration) {
     const averageGuessCount = document.createElement("td");
     averageGuessCount.setAttribute("class", "playerRankingInfo");
     averageGuessCount.setAttribute("id", "averageGuessCount");
+    averageGuessCount.setAttribute("title", Math.round(player.averageGuess / player.timesPlayed * 10000) / 10000)
     if (avgGuessDisplay == "NaN")
         averageGuessCount.textContent = "idk";
     else if (avgGuessDisplay.length == 3)
