@@ -57,7 +57,7 @@ class Player {
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.105) * (positionBonus + guessBonus) : overallBonus;
 
-        this.rating += Math.round(overallBonus) - Math.max(0, eloScaling - 1);
+        this.rating += overallBonus - Math.max(0, eloScaling - 1);
 
         if (this.rating <= 100)
             this.rating = 100;
@@ -137,17 +137,22 @@ class Player {
             return;
         }
 
-        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / baseRating, 6.95), 1.0), 10.0);
+        if (guessCount >= 7) {
+            this.altRating[CURRENT_SYSTEM + 1] -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.45));
+        }
+
+        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / baseRating, 6.95), 1.0), 12.5);
 
         const scalingFactor = 4.0;
+        const positionScalingFactor = Math.min(5.0, 4.0 * Math.max(0.85, this.altRating[CURRENT_SYSTEM + 1] / baseRating));
 
-        const positionBonus = (-Math.pow(scalingFactor * (scorePosition / playerCount), 0.8)) + 3.0;
-        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 5.0;
+        const positionBonus = (-Math.pow(positionScalingFactor * (scorePosition / playerCount), 1.35)) + 4.5;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 1.5) : -Math.pow(wordDifficulty - guessCount, 2.0) / 3.0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.105) * (positionBonus + guessBonus) : overallBonus;
 
-        this.altRating[CURRENT_SYSTEM + 1] += overallBonus - Math.max(0, eloScaling - 1);
+        this.altRating[CURRENT_SYSTEM + 1] += Math.round(overallBonus) - Math.max(0, eloScaling - 1);
 
         if (this.altRating[CURRENT_SYSTEM + 1] <= 100)
             this.altRating[CURRENT_SYSTEM + 1] = 100;
