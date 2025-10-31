@@ -1,4 +1,4 @@
-const maxNumberDaysToShow = 50; // The way I meant to handle this in the for loop has been wrong the entire time :)
+const maxNumberDaysToShow = 60; // The way I meant to handle this in the for loop has been wrong the entire time :)
 
 function RenderRankGraph(playerData) {
     let xValues = [];

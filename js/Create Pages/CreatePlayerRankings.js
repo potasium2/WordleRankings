@@ -10,14 +10,36 @@ function CreateTableRow(player, ratingSystemIteration) {
     if (ratingSystemIteration !== CURRENT_SYSTEM)
         accent = "609070"
     
-    if (player.priorRanks.length > 61) {
-        if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 60])
-            return document.createElement("div");
-    }
+    if (player.timesPlayed < 15) {
+        if (player.priorRanks.length > 61) {
+            if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 60])
+                return document.createElement("div");
+        }
 
-    if (player.priorRanks.length > 31) {
-        if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 30])
-            accent = "808080";
+        if (player.priorRanks.length > 31) {
+            if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 30])
+                accent = "808080";
+        }
+    } else if (player.timesPlayed < 30) {
+        if (player.priorRanks.length > 121) {
+            if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 120])
+                return document.createElement("div");
+        }
+
+        if (player.priorRanks.length > 91) {
+            if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 90])
+                accent = "808080";
+        }
+    } else {
+        if (player.priorRanks.length > 181) {
+            if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 180])
+                return document.createElement("div");
+        }
+
+        if (player.priorRanks.length > 121) {
+            if (playerRatingDisplay == player.priorRatings[player.priorRatings.length - 120])
+                accent = "808080";
+        }
     }
 
     let taggedCount = 0;
