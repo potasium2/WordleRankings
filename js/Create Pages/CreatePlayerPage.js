@@ -7,7 +7,7 @@ function AddProfilePicture(playerData) {
     playerImage.setAttribute("class", "playerInformation");
     playerImage.setAttribute("id", "playerProfilePicture");
 
-    if (!playerData.gifProfilePic)
+    if (!playerData.animatedProfilePicture)
         playerImage.setAttribute("src", "../profilePictures/" + playerData.name + ".png");
     else
         playerImage.setAttribute("src", "../profilePictures/" + playerData.name + ".gif");

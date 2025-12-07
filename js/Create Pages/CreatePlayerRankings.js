@@ -128,7 +128,7 @@ function CreateTableRow(player, ratingSystemIteration) {
     playerImage.setAttribute("class", "playerRankingInfo");
     playerImage.setAttribute("id", "playerIcon");
     
-    if (!player.gifProfilePic)
+    if (!player.animatedProfilePicture)
         playerImage.setAttribute("src", "../profilePictures/" + player.name + ".png");
     else
         playerImage.setAttribute("src", "../profilePictures/" + player.name + ".gif");
