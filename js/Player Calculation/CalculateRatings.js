@@ -14,7 +14,7 @@ const delta = new Player("juanfanl", startingBase, "#8010a0");
 const aidan = new Player("Aidan", startingBase, "#a060f0");
 
 // Joined Day 3
-const khana = new Player("KHANA", startingBase, "#f0f0a0");
+const khana = new Player("khana", startingBase, "#f0f0a0");
 const squiddy = new Player("Squiddy", startingBase, "#f0a040");
 const rukir = new Player("Rukir", startingBase, "#20b060");
 
@@ -85,7 +85,7 @@ const iceNinja  = new Player("IceNinja", startingBase, "#10d0d0");
 
 // Joined Day 144-145
 const willotl  = new Player("Willotl", startingBase, "#727272");
-const skyler  = new Player("SkylerWindragon", startingBase, "#d0a040");
+const skyler  = new Player("Skyler Jolteon", startingBase, "#d0a040");
 const lotus  = new Player("Lotus", startingBase, "#f080a0");
 
 // Joined Day 144
@@ -103,6 +103,9 @@ const zodile  = new Player("Dile", startingBase, "#40f0b0");
 
 // Joined Day 184
 const eli  = new Player("EliSquared", startingBase, "#303040", true);
+
+// Joined Day 214
+const tech  = new Player("Tech207", startingBase, "#50a0d0");
 
 const playersArr = [
     jacob,
@@ -153,6 +156,7 @@ const playersArr = [
     ward,
     zodile,
     eli,
+    tech
 ];
 
 let topRankPlayers = [];
@@ -1451,7 +1455,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nooblet.SetRating(baseRating);
 
     dailyDifficulty = 4.3;
-    playerCount = 13;
+    playerCount = 14;
 
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -1462,10 +1466,11 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(3, playerCount, 4, dailyDifficulty);
     rukir.DetermineRating(3, playerCount, 4, dailyDifficulty);
     stano.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(10, playerCount, 5, dailyDifficulty);
     nooblet.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    izuna.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    izuna.DetermineRating(12, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 83: Wordle #1513
@@ -1490,21 +1495,22 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 84: Wordle #1514
     dailyDifficulty = 3.7;
-    playerCount = 13;
+    playerCount = 14;
 
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(3, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(3, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(3, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(3, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 85: Wordle #1515
@@ -1704,7 +1710,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 94: Wordle #1524
     dailyDifficulty = 4.7;
-    playerCount = 13;
+    playerCount = 14;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -1712,13 +1718,14 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(2, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 5, dailyDifficulty);
     creeper.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 5, dailyDifficulty);
     jacob.DetermineRating(5, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(5, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    april.DetermineRating(11, playerCount, 7, dailyDifficulty);
-    lucy.DetermineRating(11, playerCount, 7, dailyDifficulty);
-    stano.DetermineRating(11, playerCount, 7, dailyDifficulty);
+    khana.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    lucy.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    stano.DetermineRating(12, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 95: Wordle #1525
@@ -1885,7 +1892,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 103: Wordle #1533
     dailyDifficulty = 4.5;
-    playerCount = 12;
+    playerCount = 13;
 
     izuna.DetermineRating(1, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -1897,28 +1904,30 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     brix.DetermineRating(8, playerCount, 6, dailyDifficulty);
     juanfan.DetermineRating(8, playerCount, 6, dailyDifficulty);
     squiddy.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(11, playerCount, 7, dailyDifficulty);
     stano.DetermineRating(11, playerCount, 7, dailyDifficulty);
     lightning.DetermineRating(11, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 104: Wordle #1534
     dailyDifficulty = 3.8;
-    playerCount = 9;
+    playerCount = 10;
 
     aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 3, dailyDifficulty);
-    april.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    nyfen.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    brix.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    nyfen.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 105: Wordle #1535
     dailyDifficulty = 3.9;
-    playerCount = 8;
+    playerCount = 9;
 
     lightning.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -1926,29 +1935,32 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     aidan.DetermineRating(4, playerCount, 4, dailyDifficulty);
     april.DetermineRating(4, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    brix.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 106: Wordle #1536
     dailyDifficulty = 4.6;
-    playerCount = 9;
+    playerCount = 10;
 
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
-    brix.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(7, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(7, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(9, playerCount, 7, dailyDifficulty);
+    brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(10, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 107: Wordle #1537
     dailyDifficulty = 4.1;
-    playerCount = 12;
+    playerCount = 13;
 
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(1, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(1, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -1956,16 +1968,16 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lightning.DetermineRating(1, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 108: Wordle #1538
     dailyDifficulty = 3.7;
-    playerCount = 8;
+    playerCount = 9;
 
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -1974,25 +1986,27 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(4, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 109: Wordle #1539
     dailyDifficulty = 3.9;
-    playerCount = 7;
+    playerCount = 8;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    brix.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(7, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 110: Wordle #1540
     dailyDifficulty = 4.3;
-    playerCount = 10;
+    playerCount = 11;
 
     aidan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -2000,50 +2014,53 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 5, dailyDifficulty);
     izuna.DetermineRating(6, playerCount, 5, dailyDifficulty);
     jacob.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    potasium.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(10, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 111: Wordle #1541
     dailyDifficulty = 3.7;
-    playerCount = 11;
+    playerCount = 12;
 
     lightningE99.SetRating(baseRating);
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(2, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(2, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(2, playerCount, 4, dailyDifficulty);
     panda.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    lightningE99.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lightningE99.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(10, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 112: Wordle #1542
     dailyDifficulty = 3.7;
-    playerCount = 10;
+    playerCount = 11;
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
     panda.DetermineRating(2, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    lightningE99.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(10, playerCount, 7, dailyDifficulty);
+    lightningE99.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(11, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 113: Wordle #1543
     dailyDifficulty = 3.5;
-    playerCount = 10;
+    playerCount = 11;
 
     brix.DetermineRating(1, playerCount, 2, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 2, dailyDifficulty);
@@ -2052,29 +2069,31 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     izuna.DetermineRating(4, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(4, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 4, dailyDifficulty);
     rukir.DetermineRating(7, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(7, playerCount, 4, dailyDifficulty);
-    khana.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(11, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 114: Wordle #1544
     dailyDifficulty = 4.0;
-    playerCount = 9;
+    playerCount = 10;
 
     khana.DetermineRating(1, playerCount, 2, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(2, playerCount, 3, dailyDifficulty);
     nyfen.DetermineRating(2, playerCount, 3, dailyDifficulty);
     april.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(5, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(10, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 115: Wordle #1545
     dailyDifficulty = 3.5;
-    playerCount = 10;
+    playerCount = 11;
 
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     delta.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2084,59 +2103,63 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     squiddy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(7, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(7, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(7, playerCount, 4, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 116: Wordle #1546
     dailyDifficulty = 4.4;
-    playerCount = 10;
+    playerCount = 11;
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(6, playerCount, 5, dailyDifficulty);
     ghostcowz.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(10, playerCount, 7, dailyDifficulty);
+    creeper.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(11, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 117: Wordle #1547
     dailyDifficulty = 4.2;
-    playerCount = 11;
+    playerCount = 12;
 
     lightning.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(2, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(2, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(2, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    aidan.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(11, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 118: Wordle #1548
     dailyDifficulty = 3.8;
-    playerCount = 7;
+    playerCount = 8;
 
     delta.DetermineRating(1, playerCount, 2, dailyDifficulty);
     juanfan.DetermineRating(2, playerCount, 3, dailyDifficulty);
     squiddy.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(4, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(8, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 119: Wordle #1549
     dailyDifficulty = 4.0;
-    playerCount = 12;
+    playerCount = 13;
 
     aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2150,11 +2173,12 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     izuna.DetermineRating(10, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(10, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 120: Wordle #1550
     dailyDifficulty = 4.3;
-    playerCount = 9;
+    playerCount = 10;
 
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -2165,25 +2189,27 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(4, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 5, dailyDifficulty);
     aidan.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 121: Wordle #1551
     dailyDifficulty = 4.0;
-    playerCount = 8;
+    playerCount = 9;
 
     creeper.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(1, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(1, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(6, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 122: Wordle #1552
     dailyDifficulty = 4.4;
-    playerCount = 12;
+    playerCount = 13;
 
     aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     jacob.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2197,27 +2223,29 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     brix.DetermineRating(10, playerCount, 5, dailyDifficulty);
     fwogcarf.DetermineRating(11, playerCount, 6, dailyDifficulty);
     squiddy.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(11, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 123: Wordle #1553
     dailyDifficulty = 4.0;
-    playerCount = 10;
+    playerCount = 11;
 
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(2, playerCount, 3, dailyDifficulty);
-    aidan.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    delta.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    juanfan.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    jacob.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    delta.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    jacob.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(8, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 124: Wordle #1554
     dailyDifficulty = 4.8;
-    playerCount = 13;
+    playerCount = 14;
 
     neverbacon.SetRating(baseRating);
 
@@ -2226,14 +2254,15 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     jacob.DetermineRating(1, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 5, dailyDifficulty);
     delta.DetermineRating(5, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(5, playerCount, 5, dailyDifficulty);
     neverbacon.DetermineRating(5, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    khana.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 125: Wordle #1555
@@ -2257,28 +2286,29 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 126: Wordle #1556
     dailyDifficulty = 4.3;
-    playerCount = 15;
+    playerCount = 16;
 
     lightning.DetermineRating(1, playerCount, 3, dailyDifficulty);
     ben.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(2, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    delta.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    neverbacon.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    delta.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    neverbacon.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 127: Wordle #1557
     dailyDifficulty = 3.8;
-    playerCount = 14;
+    playerCount = 15;
 
     studiedport.SetRating(baseRating);
 
@@ -2288,19 +2318,20 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     brix.DetermineRating(4, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(4, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(6, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(6, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(6, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    studiedport.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    studiedport.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 128: Wordle #1558
     dailyDifficulty = 3.7;
-    playerCount = 12;
+    playerCount = 13;
 
     aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2310,6 +2341,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(8, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(8, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(8, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(8, playerCount, 4, dailyDifficulty);
@@ -2318,7 +2350,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 129: Wordle #1559
     dailyDifficulty = 3.9;
-    playerCount = 11;
+    playerCount = 12;
 
     kamil.SetRating(baseRating);
 
@@ -2329,16 +2361,17 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     delta.DetermineRating(1, playerCount, 3, dailyDifficulty);
     kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lightning.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(7, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(7, playerCount, 4, dailyDifficulty);
-    squiddy.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    potasium.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    potasium.DetermineRating(11, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 130: Wordle #1560
     dailyDifficulty = 4.5;
-    playerCount = 13;
+    playerCount = 14;
 
     delta.DetermineRating(1, playerCount, 3, dailyDifficulty);
     kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2350,14 +2383,15 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lightning.DetermineRating(5, playerCount, 4, dailyDifficulty);
     april.DetermineRating(9, playerCount, 5, dailyDifficulty);
     creeper.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    squiddy.DetermineRating(13, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 131: Wordle #1561
     dailyDifficulty = 5.1;
-    playerCount = 14;
+    playerCount = 15;
 
     brix.DetermineRating(1, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -2367,6 +2401,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     creeper.DetermineRating(5, playerCount, 5, dailyDifficulty);
     delta.DetermineRating(5, playerCount, 5, dailyDifficulty);
     aidan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 6, dailyDifficulty);
     juanfan.DetermineRating(8, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(8, playerCount, 6, dailyDifficulty);
     khana.DetermineRating(8, playerCount, 6, dailyDifficulty);
@@ -2377,7 +2412,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
 
     // Day 132: Wordle #1562
     dailyDifficulty = 5.2;
-    playerCount = 12;
+    playerCount = 13;
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2389,32 +2424,34 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     april.DetermineRating(8, playerCount, 5, dailyDifficulty);
     khana.DetermineRating(8, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(11, playerCount, 7, dailyDifficulty);
-    jacob.DetermineRating(11, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(12, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 133: Wordle #1563
     dailyDifficulty = 4.4;
-    playerCount = 13;
+    playerCount = 14;
 
     april.DetermineRating(1, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    delta.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    delta.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 134: Wordle #1564
     dailyDifficulty = 4.4;
-    playerCount = 15;
+    playerCount = 16;
 
     aidan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     april.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -2424,52 +2461,55 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(1, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
     potasium.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    rukir.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    juanfan.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    kamil.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    rukir.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    juanfan.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 135: Wordle #1565
     dailyDifficulty = 3.7;
-    playerCount = 14;
+    playerCount = 15;
 
     juanfan.DetermineRating(1, playerCount, 2, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(2, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(4, playerCount, 4, dailyDifficulty);
     april.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(4, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    creeper.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    creeper.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 136: Wordle #1566
     dailyDifficulty = 4.4;
-    playerCount = 8;
+    playerCount = 9;
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(4, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    kamil.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 137: Wordle #1567
     dailyDifficulty = 4.7;
-    playerCount = 14;
+    playerCount = 15;
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2484,12 +2524,13 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     jacob.DetermineRating(9, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(9, playerCount, 5, dailyDifficulty);
     potasium.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(14, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(14, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 138: Wordle #1568
     dailyDifficulty = 4.1;
-    playerCount = 15;
+    playerCount = 16;
 
     iceNinja.SetRating(baseRating);
 
@@ -2508,11 +2549,12 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(6, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(6, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(15, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(16, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 139: Wordle #1569
     dailyDifficulty = 3.6;
-    playerCount = 13;
+    playerCount = 14;
 
     creeper.DetermineRating(1, playerCount, 2, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 2, dailyDifficulty);
@@ -2523,33 +2565,35 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(3, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(9, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 4, dailyDifficulty);
     ghostcowz.DetermineRating(9, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(9, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(9, playerCount, 4, dailyDifficulty);
-    kamil.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(14, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 140: Wordle #1570
     dailyDifficulty = 4.1;
-    playerCount = 12;
+    playerCount = 13;
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(3, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(3, playerCount, 4, dailyDifficulty);
     ghostcowz.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    kamil.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    kamil.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 
     // Day 141: Wordle #1571
     dailyDifficulty = 4.5;
-    playerCount = 13;
+    playerCount = 14;
 
     nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
     ghostcowz.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2564,11 +2608,12 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(9, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(12, playerCount, 6, dailyDifficulty);
     squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 142: Wordle #1572
     dailyDifficulty = 4.2;
-    playerCount = 14;
+    playerCount = 15;
 
     nidgey.DetermineRating(1, playerCount, 2, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -2580,15 +2625,16 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(7, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(7, playerCount, 4, dailyDifficulty);
     april.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(10, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(10, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    rukir.DetermineRating(13, playerCount, 6, dailyDifficulty);
+    kamil.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    rukir.DetermineRating(14, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 143: Wordle #1573
     dailyDifficulty = 4.2;
-    playerCount = 15;
+    playerCount = 16;
 
     creeper.DetermineRating(1, playerCount, 2, dailyDifficulty);
     kamil.DetermineRating(1, playerCount, 2, dailyDifficulty);
@@ -2598,41 +2644,43 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lightning.DetermineRating(3, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 3, dailyDifficulty);
     squiddy.DetermineRating(3, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(9, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    iceNinja.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    iceNinja.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(16, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 144: Wordle #1574
     dailyDifficulty = 4.5;
-    playerCount = 15;
+    playerCount = 16;
 
     willotl.SetRating(baseRating);
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(2, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    juanfan.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    willotl.DetermineRating(4, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    nyfen.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    willotl.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    nyfen.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 145: Wordle #1575
     dailyDifficulty = 4.0;
-    playerCount = 18;
+    playerCount = 19;
 
     lotus.SetRating(baseRating);
     skyler.SetRating(baseRating);
@@ -2644,6 +2692,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lotus.DetermineRating(5, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(6, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(6, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(6, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(6, playerCount, 4, dailyDifficulty);
@@ -2651,39 +2700,40 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(6, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(6, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    skyler.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    nidgey.DetermineRating(17, playerCount, 7, dailyDifficulty);
-    jacob.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    skyler.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    nidgey.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(18, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 146: Wordle #1576
     dailyDifficulty = 5.3;
-    playerCount = 18;
+    playerCount = 19;
 
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     rukir.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     fwogcarf.DetermineRating(3, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(3, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    april.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    delta.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    lotus.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    iceNinja.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    jacob.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    kamil.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    nidgey.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    nyfen.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    delta.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    lotus.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    iceNinja.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    kamil.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    nidgey.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    nyfen.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 147: Wordle #1577
     dailyDifficulty = 4.1;
-    playerCount = 16;
+    playerCount = 17;
 
     kamil.DetermineRating(1, playerCount, 2, dailyDifficulty);
     delta.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -2696,16 +2746,17 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nidgey.DetermineRating(4, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(4, playerCount, 4, dailyDifficulty);
     skyler.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(12, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(14, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    lotus.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    potasium.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    lotus.DetermineRating(16, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 148: Wordle #1578
     dailyDifficulty = 4.0;
-    playerCount = 19;
+    playerCount = 20;
 
     april.DetermineRating(1, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -2715,22 +2766,23 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(1, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(8, playerCount, 5, dailyDifficulty);
     izuna.DetermineRating(8, playerCount, 5, dailyDifficulty);
     jacob.DetermineRating(8, playerCount, 5, dailyDifficulty);
     nidgey.DetermineRating(8, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(8, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    fwogcarf.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    skyler.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    fwogcarf.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(16, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 149: Wordle #1579
     dailyDifficulty = 5.0;
-    playerCount = 14;
+    playerCount = 15;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -2739,36 +2791,38 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nidgey.DetermineRating(2, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(2, playerCount, 4, dailyDifficulty);
     april.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(7, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(7, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    skyler.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(15, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 150: Wordle #1580
     dailyDifficulty = 4.6;
-    playerCount = 17;
+    playerCount = 18;
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    juanfan.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    lotus.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    nidgey.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    skyler.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    aidan.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    jacob.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    kamil.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    potasium.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    lotus.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    kamil.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    potasium.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 151: Wordle #1581
@@ -2794,7 +2848,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     
     // Day 152: Wordle #1582
     dailyDifficulty = 4.3;
-    playerCount = 15;
+    playerCount = 16;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -2804,34 +2858,36 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(2, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(2, playerCount, 4, dailyDifficulty);
     april.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(8, playerCount, 5, dailyDifficulty);
     skyler.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(16, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 153: Wordle #1583
     dailyDifficulty = 3.8;
-    playerCount = 15;
+    playerCount = 16;
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
-    april.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    delta.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    kamil.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    lightning.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    nidgey.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    nyfen.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    squiddy.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    delta.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    lightning.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    nidgey.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    nyfen.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    squiddy.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 154: Wordle #1584
@@ -2864,13 +2920,14 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     
     // Day 155: Wordle #1585
     dailyDifficulty = 4.3;
-    playerCount = 17;
+    playerCount = 18;
 
     david.SetRating(baseRating);
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     izuna.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
     david.DetermineRating(4, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(4, playerCount, 4, dailyDifficulty);
     fwogcarf.DetermineRating(4, playerCount, 4, dailyDifficulty);
@@ -2878,18 +2935,18 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(4, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    nidgey.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(18, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 156: Wordle #1586
     dailyDifficulty = 4.3;
-    playerCount = 18;
+    playerCount = 19;
 
     izuna.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2900,20 +2957,21 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     brix.DetermineRating(4, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(4, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(10, playerCount, 5, dailyDifficulty);
     david.DetermineRating(10, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(10, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(10, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(10, playerCount, 5, dailyDifficulty);
     jacob.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(17, playerCount, 7, dailyDifficulty);
-    squiddy.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    fwogcarf.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    squiddy.DetermineRating(18, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 157: Wordle #1587
     dailyDifficulty = 4.1;
-    playerCount = 16;
+    playerCount = 17;
 
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     delta.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2921,22 +2979,24 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nidgey.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 4, dailyDifficulty);
     april.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(5, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(5, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(5, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    david.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    skyler.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    david.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    skyler.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(17, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 158: Wordle #1588
     dailyDifficulty = 4.5;
-    playerCount = 15;
+    playerCount = 16;
 
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
     david.DetermineRating(1, playerCount, 4, dailyDifficulty);
     izuna.DetermineRating(1, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -2944,19 +3004,19 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(1, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(1, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    delta.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    juanfan.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(14, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    delta.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(16, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 159: Wordle #1589
     dailyDifficulty = 4.5;
-    playerCount = 18;
+    playerCount = 19;
 
     izuna.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -2971,16 +3031,17 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
     brix.DetermineRating(12, playerCount, 6, dailyDifficulty);
     delta.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(12, playerCount, 6, dailyDifficulty);
     khana.DetermineRating(12, playerCount, 6, dailyDifficulty);
     lucy.DetermineRating(12, playerCount, 6, dailyDifficulty);
     nidgey.DetermineRating(12, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(19, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 160: Wordle #1590
     dailyDifficulty = 4.5;
-    playerCount = 17;
+    playerCount = 18;
 
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -2995,15 +3056,16 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     creeper.DetermineRating(11, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(11, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(14, playerCount, 6, dailyDifficulty);
     fwogcarf.DetermineRating(14, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(14, playerCount, 6, dailyDifficulty);
     nidgey.DetermineRating(14, playerCount, 6, dailyDifficulty);
-    khana.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    khana.DetermineRating(18, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 161: Wordle #1591
     dailyDifficulty = 4.4;
-    playerCount = 19;
+    playerCount = 20;
 
     adam.SetRating(baseRating);
 
@@ -3025,12 +3087,13 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     potasium.DetermineRating(8, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
     april.DetermineRating(18, playerCount, 6, dailyDifficulty);
-    adam.DetermineRating(19, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(18, playerCount, 6, dailyDifficulty);
+    adam.DetermineRating(20, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 162: Wordle #1592
     dailyDifficulty = 4.8;
-    playerCount = 13;
+    playerCount = 14;
 
     ward.SetRating(baseRating);
 
@@ -3042,16 +3105,17 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nidgey.DetermineRating(3, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(9, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    kamil.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    kamil.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 163: Wordle #1593
     dailyDifficulty = 4.1;
-    playerCount = 16;
+    playerCount = 17;
 
     creeper.DetermineRating(1, playerCount, 2, dailyDifficulty);
     kamil.DetermineRating(1, playerCount, 2, dailyDifficulty);
@@ -3069,32 +3133,34 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     squiddy.DetermineRating(11, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(15, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(15, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(17, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 164: Wordle #1594
     dailyDifficulty = 4.2;
-    playerCount = 15;
+    playerCount = 16;
 
     aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(3, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(3, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    adam.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    david.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    lucy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    nidgey.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(14, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    adam.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    david.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(15, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 165: Wordle #1595
     dailyDifficulty = 4.5;
-    playerCount = 17;
+    playerCount = 18;
 
     kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -3104,41 +3170,43 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     nyfen.DetermineRating(2, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(2, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    juanfan.DetermineRating(9, playerCount, 5, dailyDifficulty);
     brix.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    david.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    rukir.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    adam.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    jacob.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    khana.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    david.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    rukir.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    adam.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    jacob.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    khana.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 166: Wordle #1596
     dailyDifficulty = 4.2;
-    playerCount = 15;
+    playerCount = 16;
 
     kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nidgey.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
     david.DetermineRating(4, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(4, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(4, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(4, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    adam.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    delta.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    adam.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    delta.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(11, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 167: Wordle #1597
     dailyDifficulty = 4.0;
-    playerCount = 14;
+    playerCount = 15;
 
     lotus.DetermineRating(1, playerCount, 2, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
@@ -3151,14 +3219,15 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(10, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    adam.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    adam.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    brix.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 168: Wordle #1598
     dailyDifficulty = 4.5;
-    playerCount = 13;
+    playerCount = 14;
 
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -3171,35 +3240,37 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(7, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
     juanfan.DetermineRating(12, playerCount, 6, dailyDifficulty);
     lightning.DetermineRating(12, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 169: Wordle #1599
     dailyDifficulty = 4.5;
-    playerCount = 16;
+    playerCount = 17;
 
     lotus.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(2, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(2, playerCount, 4, dailyDifficulty);
     nyfen.DetermineRating(2, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    creeper.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    nidgey.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    david.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    kamil.DetermineRating(10, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    khana.DetermineRating(14, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    creeper.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    david.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    kamil.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    khana.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 170: Wordle #1600
     dailyDifficulty = 3.7;
-    playerCount = 13;
+    playerCount = 14;
 
     lightning.DetermineRating(1, playerCount, 1, dailyDifficulty);
     april.DetermineRating(2, playerCount, 2, dailyDifficulty);
@@ -3211,14 +3282,15 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     fwogcarf.DetermineRating(7, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(7, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(10, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(10, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    adam.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    adam.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 171: Wordle #1601
     dailyDifficulty = 3.9;
-    playerCount = 16;
+    playerCount = 17;
 
     zodile.SetRating(baseRating);
 
@@ -3233,36 +3305,38 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(4, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(4, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 5, dailyDifficulty);
     david.DetermineRating(12, playerCount, 5, dailyDifficulty);
     fwogcarf.DetermineRating(12, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    zodile.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    kamil.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    zodile.DetermineRating(17, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 172: Wordle #1602
     dailyDifficulty = 3.9;
-    playerCount = 14;
+    playerCount = 15;
 
     kamil.DetermineRating(1, playerCount, 2, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
     brix.DetermineRating(3, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 3, dailyDifficulty);
     jacob.DetermineRating(3, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(3, playerCount, 3, dailyDifficulty);
-    aidan.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    david.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    fwogcarf.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    lightning.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    neverbacon.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    skyler.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    nyfen.DetermineRating(13, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    david.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    fwogcarf.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    lightning.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    neverbacon.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    skyler.DetermineRating(7, playerCount, 4, dailyDifficulty);
+    nyfen.DetermineRating(14, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(14, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 173: Wordle #1603
     dailyDifficulty = 3.5;
-    playerCount = 16;
+    playerCount = 17;
 
     potasium.DetermineRating(1, playerCount, 1, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 1, dailyDifficulty);
@@ -3278,13 +3352,14 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     brix.DetermineRating(12, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(12, playerCount, 5, dailyDifficulty);
     creeper.DetermineRating(14, playerCount, 6, dailyDifficulty);
-    delta.DetermineRating(15, playerCount, 7, dailyDifficulty);
-    skyler.DetermineRating(15, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    delta.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    skyler.DetermineRating(16, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 174: Wordle #1604
     dailyDifficulty = 4.9;
-    playerCount = 14;
+    playerCount = 15;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -3294,17 +3369,18 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     neverbacon.DetermineRating(5, playerCount, 5, dailyDifficulty);
     brix.DetermineRating(7, playerCount, 6, dailyDifficulty);
     creeper.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(7, playerCount, 6, dailyDifficulty);
     lightning.DetermineRating(7, playerCount, 6, dailyDifficulty);
     nyfen.DetermineRating(7, playerCount, 6, dailyDifficulty);
     skyler.DetermineRating(7, playerCount, 6, dailyDifficulty);
     squiddy.DetermineRating(7, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    lucy.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 175: Wordle #1605
     dailyDifficulty = 5.0;
-    playerCount = 16;
+    playerCount = 17;
 
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -3315,18 +3391,19 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(5, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 4, dailyDifficulty);
     april.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(9, playerCount, 5, dailyDifficulty);
     david.DetermineRating(9, playerCount, 5, dailyDifficulty);
     fwogcarf.DetermineRating(9, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(9, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(9, playerCount, 5, dailyDifficulty);
     skyler.DetermineRating(9, playerCount, 5, dailyDifficulty);
-    studiedport.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    studiedport.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(17, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 176: Wordle #1606
     dailyDifficulty = 4.8;
-    playerCount = 19;
+    playerCount = 20;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -3340,18 +3417,19 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(7, playerCount, 5, dailyDifficulty);
     skyler.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(13, playerCount, 6, dailyDifficulty);
     fwogcarf.DetermineRating(13, playerCount, 6, dailyDifficulty);
     juanfan.DetermineRating(13, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(13, playerCount, 6, dailyDifficulty);
     lightning.DetermineRating(13, playerCount, 6, dailyDifficulty);
     nyfen.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(18, playerCount, 7, dailyDifficulty);
-    delta.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    brix.DetermineRating(19, playerCount, 7, dailyDifficulty);
+    delta.DetermineRating(19, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 177: Wordle #1607
     dailyDifficulty = 4.1;
-    playerCount = 14;
+    playerCount = 15;
 
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nidgey.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -3359,19 +3437,20 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     juanfan.DetermineRating(3, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(3, playerCount, 4, dailyDifficulty);
     april.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(6, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(6, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(6, playerCount, 5, dailyDifficulty);
     nyfen.DetermineRating(6, playerCount, 5, dailyDifficulty);
     potasium.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(12, playerCount, 6, dailyDifficulty);
-    skyler.DetermineRating(12, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(13, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(13, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(13, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 178: Wordle #1608
     dailyDifficulty = 4.2;
-    playerCount = 17;
+    playerCount = 18;
 
     khana.DetermineRating(1, playerCount, 2, dailyDifficulty);
     lightning.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -3379,24 +3458,26 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     squiddy.DetermineRating(2, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 4, dailyDifficulty);
     april.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
     fwogcarf.DetermineRating(5, playerCount, 4, dailyDifficulty);
     iceNinja.DetermineRating(5, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    lucy.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    nidgey.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    skyler.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    creeper.DetermineRating(16, playerCount, 7, dailyDifficulty);
-    lobsterfighter.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    lucy.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    skyler.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    creeper.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    lobsterfighter.DetermineRating(17, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 179: Wordle #1609
     dailyDifficulty = 4.0;
-    playerCount = 19;
+    playerCount = 20;
 
     april.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(1, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(1, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -3406,15 +3487,15 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
     rukir.DetermineRating(1, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    lobsterfighter.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(16, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(16, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(18, playerCount, 7, dailyDifficulty);
-    iceNinja.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    lobsterfighter.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(17, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(17, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(19, playerCount, 7, dailyDifficulty);
+    iceNinja.DetermineRating(19, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 180: Wordle #1610
@@ -3437,30 +3518,31 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     
     // Day 181: Wordle #1611
     dailyDifficulty = 4.7;
-    playerCount = 17;
+    playerCount = 18;
 
     lucy.DetermineRating(1, playerCount, 2, dailyDifficulty);
     iceNinja.DetermineRating(2, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(2, playerCount, 3, dailyDifficulty);
     neverbacon.DetermineRating(3, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    delta.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    zodile.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    stano.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    kamil.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    aidan.DetermineRating(16, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    brix.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    delta.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    zodile.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    stano.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    kamil.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(17, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 182: Wordle #1612
     dailyDifficulty = 3.8;
-    playerCount = 16;
+    playerCount = 17;
 
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -3469,44 +3551,46 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     skyler.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(6, playerCount, 4, dailyDifficulty);
     april.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 4, dailyDifficulty);
     jacob.DetermineRating(6, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(6, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(6, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    iceNinja.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    juanfan.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    stano.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    iceNinja.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    stano.DetermineRating(13, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 183: Wordle #1613
     dailyDifficulty = 4.0;
-    playerCount = 18;
+    playerCount = 19;
 
     aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     delta.DetermineRating(1, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
     iceNinja.DetermineRating(5, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(5, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    creeper.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    lobsterfighter.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    skyler.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    stano.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(16, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(16, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lobsterfighter.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    skyler.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    stano.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(17, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(17, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(19, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 184: Wordle #1614
     dailyDifficulty = 4.9;
-    playerCount = 20;
+    playerCount = 21;
 
     eli.SetRating(baseRating);
 
@@ -3518,23 +3602,24 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     aidan.DetermineRating(6, playerCount, 4, dailyDifficulty);
     april.DetermineRating(6, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 4, dailyDifficulty);
     lightning.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    eli.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    nyfen.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(10, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    iceNinja.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    nidgey.DetermineRating(15, playerCount, 6, dailyDifficulty);
-    skyler.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    eli.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    nyfen.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(11, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    iceNinja.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    nidgey.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(16, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 185: Wordle #1615
     dailyDifficulty = 5.0;
-    playerCount = 16;
+    playerCount = 17;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -3549,6 +3634,7 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     jacob.DetermineRating(9, playerCount, 6, dailyDifficulty);
     nidgey.DetermineRating(9, playerCount, 6, dailyDifficulty);
     skyler.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(14, playerCount, 7, dailyDifficulty);
     lobsterfighter.DetermineRating(14, playerCount, 7, dailyDifficulty);
     squiddy.DetermineRating(14, playerCount, 7, dailyDifficulty);
     stano.DetermineRating(14, playerCount, 7, dailyDifficulty);
@@ -3556,34 +3642,36 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     
     // Day 186: Wordle #1616
     dailyDifficulty = 4.7;
-    playerCount = 16;
+    playerCount = 17;
 
     crackbox.DetermineRating(1, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(3, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    delta.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    potasium.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    zodile.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    april.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    kamil.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    fwogcarf.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    squiddy.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    delta.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    potasium.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    zodile.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    kamil.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    fwogcarf.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    squiddy.DetermineRating(17, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 187: Wordle #1617
     dailyDifficulty = 3.6;
-    playerCount = 16;
+    playerCount = 17;
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nyfen.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(4, playerCount, 4, dailyDifficulty);
     fwogcarf.DetermineRating(4, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
@@ -3591,16 +3679,16 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lucy.DetermineRating(4, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(4, playerCount, 4, dailyDifficulty);
     potasium.DetermineRating(4, playerCount, 4, dailyDifficulty);
-    april.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    iceNinja.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(12, playerCount, 5, dailyDifficulty);
-    aidan.DetermineRating(16, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    iceNinja.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(17, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 188: Wordle #1618
     dailyDifficulty = 4.6;
-    playerCount = 17;
+    playerCount = 18;
 
     lotus.DetermineRating(0, playerCount, 1, dailyDifficulty, true);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -3610,41 +3698,43 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lightning.DetermineRating(2, playerCount, 4, dailyDifficulty);
     rukir.DetermineRating(2, playerCount, 4, dailyDifficulty);
     april.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 5, dailyDifficulty);
     jacob.DetermineRating(7, playerCount, 5, dailyDifficulty);
     khana.DetermineRating(7, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    iceNinja.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    kamil.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    nidgey.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    nyfen.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    skyler.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    fwogcarf.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    brix.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    iceNinja.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    kamil.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    nidgey.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    nyfen.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    fwogcarf.DetermineRating(18, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 189: Wordle #1619
     dailyDifficulty = 4.0;
-    playerCount = 14;
+    playerCount = 15;
 
     april.DetermineRating(1, playerCount, 3, dailyDifficulty);
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     iceNinja.DetermineRating(3, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(3, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(3, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    crackbox.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    juanfan.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    lobsterfighter.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    crackbox.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lobsterfighter.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(15, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 190: Wordle #1620
     dailyDifficulty = 3.6;
-    playerCount = 16;
+    playerCount = 17;
 
     creeper.DetermineRating(1, playerCount, 2, dailyDifficulty);
     fwogcarf.DetermineRating(1, playerCount, 2, dailyDifficulty);
@@ -3653,39 +3743,41 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     rukir.DetermineRating(3, playerCount, 3, dailyDifficulty);
     april.DetermineRating(6, playerCount, 4, dailyDifficulty);
     brix.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 4, dailyDifficulty);
     iceNinja.DetermineRating(6, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(6, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(6, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(6, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(6, playerCount, 4, dailyDifficulty);
-    lightning.DetermineRating(13, playerCount, 5, dailyDifficulty);
-    skyler.DetermineRating(13, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(13, playerCount, 5, dailyDifficulty);
-    zodile.DetermineRating(13, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(14, playerCount, 5, dailyDifficulty);
+    skyler.DetermineRating(14, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(14, playerCount, 5, dailyDifficulty);
+    zodile.DetermineRating(14, playerCount, 5, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 191: Wordle #1621
     dailyDifficulty = 4.4;
-    playerCount = 13;
+    playerCount = 14;
 
     brix.DetermineRating(1, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(1, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 4, dailyDifficulty);
     skyler.DetermineRating(1, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(5, playerCount, 5, dailyDifficulty);
     juanfan.DetermineRating(5, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(5, playerCount, 5, dailyDifficulty);
     rukir.DetermineRating(5, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(11, playerCount, 6, dailyDifficulty);
-    april.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    fwogcarf.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 192: Wordle #1622
     dailyDifficulty = 4.2;
-    playerCount = 17;
+    playerCount = 18;
 
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -3694,21 +3786,22 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     lobsterfighter.DetermineRating(3, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(6, playerCount, 5, dailyDifficulty);
     creeper.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 5, dailyDifficulty);
     delta.DetermineRating(6, playerCount, 5, dailyDifficulty);
     iceNinja.DetermineRating(6, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(6, playerCount, 5, dailyDifficulty);
     skyler.DetermineRating(6, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(6, playerCount, 5, dailyDifficulty);
-    april.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    fwogcarf.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(13, playerCount, 6, dailyDifficulty);
-    jacob.DetermineRating(16, playerCount, 7, dailyDifficulty);
-    lightning.DetermineRating(16, playerCount, 7, dailyDifficulty);
+    april.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    fwogcarf.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(14, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(17, playerCount, 7, dailyDifficulty);
+    lightning.DetermineRating(17, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 193: Wordle #1623
     dailyDifficulty = 4.4;
-    playerCount = 14;
+    playerCount = 15;
 
     brix.DetermineRating(1, playerCount, 4, dailyDifficulty);
     creeper.DetermineRating(1, playerCount, 4, dailyDifficulty);
@@ -3716,19 +3809,20 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(1, playerCount, 4, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 5, dailyDifficulty);
     april.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(5, playerCount, 5, dailyDifficulty);
     lucy.DetermineRating(5, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
     stano.DetermineRating(5, playerCount, 5, dailyDifficulty);
     fwogcarf.DetermineRating(5, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(12, playerCount, 6, dailyDifficulty);
-    lobsterfighter.DetermineRating(13, playerCount, 7, dailyDifficulty);
-    skyler.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    kamil.DetermineRating(13, playerCount, 6, dailyDifficulty);
+    lobsterfighter.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    skyler.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 194: Wordle #1624
     dailyDifficulty = 4.4;
-    playerCount = 13;
+    playerCount = 14;
 
     khana.DetermineRating(1, playerCount, 2, dailyDifficulty);
     lucy.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -3741,49 +3835,52 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     kamil.DetermineRating(5, playerCount, 5, dailyDifficulty);
     lightning.DetermineRating(5, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
     fwogcarf.DetermineRating(12, playerCount, 6, dailyDifficulty);
     stano.DetermineRating(12, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 195: Wordle #1625
     dailyDifficulty = 4.8;
-    playerCount = 12;
+    playerCount = 13;
 
     potasium.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
     april.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(2, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(2, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
-    creeper.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    kamil.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    nidgey.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    brix.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    creeper.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(13, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 196: Wordle #1626
     dailyDifficulty = 4.2;
-    playerCount = 12;
+    playerCount = 13;
 
     lightning.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     april.DetermineRating(3, playerCount, 4, dailyDifficulty);
     crackbox.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
     juanfan.DetermineRating(3, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(3, playerCount, 4, dailyDifficulty);
     nidgey.DetermineRating(3, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    fwogcarf.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    khana.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
-    zodile.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    zodile.DetermineRating(13, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 197: Wordle #1627
     dailyDifficulty = 4.5;
-    playerCount = 12;
+    playerCount = 13;
 
     nidgey.DetermineRating(1, playerCount, 3, dailyDifficulty);
     delta.DetermineRating(2, playerCount, 4, dailyDifficulty);
@@ -3793,50 +3890,53 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     khana.DetermineRating(4, playerCount, 5, dailyDifficulty);
     squiddy.DetermineRating(4, playerCount, 5, dailyDifficulty);
     aidan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 6, dailyDifficulty);
     kamil.DetermineRating(8, playerCount, 6, dailyDifficulty);
     lightning.DetermineRating(8, playerCount, 6, dailyDifficulty);
     skyler.DetermineRating(8, playerCount, 6, dailyDifficulty);
-    fwogcarf.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    fwogcarf.DetermineRating(13, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 198: Wordle #1628
     dailyDifficulty = 4.5;
-    playerCount = 10;
+    playerCount = 11;
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     squiddy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    fwogcarf.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    juanfan.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    lightning.DetermineRating(6, playerCount, 6, dailyDifficulty);
-    april.DetermineRating(10, playerCount, 7, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    fwogcarf.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    april.DetermineRating(11, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 199: Wordle #1629
     dailyDifficulty = 3.7;
-    playerCount = 13;
+    playerCount = 14;
 
     brix.DetermineRating(1, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nidgey.DetermineRating(1, playerCount, 3, dailyDifficulty);
     aidan.DetermineRating(5, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(5, playerCount, 4, dailyDifficulty);
     fwogcarf.DetermineRating(5, playerCount, 4, dailyDifficulty);
     kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(5, playerCount, 4, dailyDifficulty);
     squiddy.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    juanfan.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    stano.DetermineRating(11, playerCount, 5, dailyDifficulty);
-    lightning.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    juanfan.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    stano.DetermineRating(12, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 200: Wordle #1630
     dailyDifficulty = 4.2;
-    playerCount = 14;
+    playerCount = 15;
 
     potasium.DetermineRating(1, playerCount, 2, dailyDifficulty);
     kamil.DetermineRating(2, playerCount, 3, dailyDifficulty);
@@ -3849,14 +3949,15 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
     delta.DetermineRating(10, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
     stano.DetermineRating(12, playerCount, 6, dailyDifficulty);
-    brix.DetermineRating(13, playerCount, 7, dailyDifficulty);
-    fwogcarf.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    brix.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    fwogcarf.DetermineRating(14, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 201: Wordle #1631
     dailyDifficulty = 3.7;
-    playerCount = 10;
+    playerCount = 11;
 
     creeper.DetermineRating(1, playerCount, 3, dailyDifficulty);
     nidgey.DetermineRating(1, playerCount, 3, dailyDifficulty);
@@ -3867,24 +3968,284 @@ function CalculateRatings(ratingSystemIteration = CURRENT_SYSTEM) {
     kamil.DetermineRating(5, playerCount, 4, dailyDifficulty);
     khana.DetermineRating(5, playerCount, 4, dailyDifficulty);
     lucy.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    lightning.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(11, playerCount, 6, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
     
     // Day 202: Wordle #1632
     dailyDifficulty = 3.8;
-    playerCount = 11;
+    playerCount = 13;
 
     lightning.DetermineRating(1, playerCount, 2, dailyDifficulty);
+    april.DetermineRating(2, playerCount, 3, dailyDifficulty);
     creeper.DetermineRating(2, playerCount, 3, dailyDifficulty);
     khana.DetermineRating(2, playerCount, 3, dailyDifficulty);
     nidgey.DetermineRating(2, playerCount, 3, dailyDifficulty);
-    fwogcarf.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    squiddy.DetermineRating(5, playerCount, 4, dailyDifficulty);
-    aidan.DetermineRating(7, playerCount, 5, dailyDifficulty);
-    jacob.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 203: Wordle #1633
+    dailyDifficulty = 4.6;
+    playerCount = 13;
+
+    kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    squiddy.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    creeper.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    nidgey.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    brix.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    stano.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 204: Wordle #1634
+    dailyDifficulty = 4.1;
+    playerCount = 12;
+
+    aidan.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    lightning.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    lucy.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    nidgey.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    jacob.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    stano.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 205: Wordle #1635
+    dailyDifficulty = 4.1;
+    playerCount = 12;
+
+    khana.DetermineRating(1, playerCount, 2, dailyDifficulty);
+    april.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    kamil.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    lucy.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    creeper.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    nidgey.DetermineRating(9, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(12, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 206: Wordle #1636
+    dailyDifficulty = 4.1;
+    playerCount = 13;
+
+    kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    creeper.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    lightning.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    lucy.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(10, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    nidgey.DetermineRating(12, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 207: Wordle #1637
+    dailyDifficulty = 3.7;
+    playerCount = 14;
+
+    lucy.DetermineRating(1, playerCount, 2, dailyDifficulty);
+    april.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    creeper.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    delta.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    lightning.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    kamil.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    nidgey.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    skyler.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(6, playerCount, 4, dailyDifficulty);
+    jacob.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 208: Wordle #1638
+    dailyDifficulty = 4.4;
+    playerCount = 10;
+
+    khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    iceNinja.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    kamil.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(10, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 209: Wordle #1639
+    dailyDifficulty = 4.3;
+    playerCount = 9;
+
+    khana.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    fwogcarf.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(6, playerCount, 5, dailyDifficulty);
     kamil.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    stano.DetermineRating(9, playerCount, 6, dailyDifficulty);
-    lucy.DetermineRating(11, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 210: Wordle #1640
+    dailyDifficulty = 4.9;
+    playerCount = 8;
+
+    juanfan.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    daphne.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    kamil.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(2, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    squiddy.DetermineRating(5, playerCount, 5, dailyDifficulty);
+    aidan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 211: Wordle #1641
+    dailyDifficulty = 4.6;
+    playerCount = 10;
+
+    lucy.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    neverbacon.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    skyler.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    april.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    kamil.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    aidan.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    fwogcarf.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 212: Wordle #1642
+    dailyDifficulty = 4.4;
+    playerCount = 15;
+
+    iceNinja.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    kamil.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    squiddy.DetermineRating(1, playerCount, 3, dailyDifficulty);
+    aidan.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    lightning.DetermineRating(4, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(9, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(11, playerCount, 6, dailyDifficulty);
+    fwogcarf.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    stano.DetermineRating(14, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 213: Wordle #1643
+    dailyDifficulty = 4.6;
+    playerCount = 15;
+
+    aidan.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    fwogcarf.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    iceNinja.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    skyler.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    stano.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    april.DetermineRating(7, playerCount, 5, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    jacob.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    juanfan.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    lightning.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 6, dailyDifficulty);
+    khana.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    nidgey.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    neverbacon.DetermineRating(13, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 214: Wordle #1644
+    dailyDifficulty = 4.3;
+    playerCount = 19;
+
+    tech.SetRating(baseRating);
+
+    crackbox.DetermineRating(1, playerCount, 2, dailyDifficulty); // ???
+    fletch.DetermineRating(2, playerCount, 3, dailyDifficulty);
+    creeper.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    kamil.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    khana.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(3, playerCount, 4, dailyDifficulty);
+    aidan.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    brix.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    iceNinja.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    juanfan.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    rukir.DetermineRating(8, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    delta.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    skyler.DetermineRating(15, playerCount, 6, dailyDifficulty);
+    nidgey.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    tech.DetermineRating(18, playerCount, 7, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 215: Wordle #1645
+    dailyDifficulty = 3.9;
+    playerCount = 11;
+
+    aidan.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    daphne.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    delta.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    juanfan.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    jacob.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    khana.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    lucy.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    april.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    stano.DetermineRating(10, playerCount, 6, dailyDifficulty);
+    SaveRankings(ratingSystemIteration);
+    
+    // Day 216: Wordle #1646
+    dailyDifficulty = 4.4;
+    playerCount = 10;
+
+    aidan.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    delta.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    jacob.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    potasium.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    squiddy.DetermineRating(1, playerCount, 4, dailyDifficulty);
+    brix.DetermineRating(6, playerCount, 5, dailyDifficulty);
+    lightning.DetermineRating(7, playerCount, 6, dailyDifficulty);
+    daphne.DetermineRating(8, playerCount, 7, dailyDifficulty);
+    khana.DetermineRating(8, playerCount, 7, dailyDifficulty);
+    lucy.DetermineRating(8, playerCount, 7, dailyDifficulty);
     SaveRankings(ratingSystemIteration);
 }
 
