@@ -32,6 +32,7 @@ class Player {
         this.tags.push(tagged);
         this.DetermineRatingV1(scorePosition, playerCount, guessCount, wordDifficulty);
         this.DetermineRatingV2(scorePosition, playerCount, guessCount, wordDifficulty);
+        this.DetermineRatingV3(scorePosition, playerCount, guessCount, wordDifficulty);
         this.DetermineReworkRating(scorePosition, playerCount, guessCount, wordDifficulty);
 
         if (scorePosition <= 0 || playerCount <= 1) {
@@ -42,22 +43,19 @@ class Player {
         this.timesPlayed = this.timesPlayed + 1;
         this.averageGuess = this.averageGuess + guessCount;
 
-        if (guessCount >= 7) {
-            this.rating -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
-        }
+        const eloScaling = Math.min(Math.max(Math.pow(this.rating / 1000.0, 6.95), 1.0), 30.0);
 
-        const eloScaling = Math.min(Math.max(Math.pow(this.rating / baseRating, 6.95), 1.0), 20.0);
+        const scalingFactor = 5.0;
+        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, 1000.0 / this.rating));
 
-        const scalingFactor = 4.0;
-        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, baseRating / this.rating));
-
-        const positionBonus = (-Math.pow(positionScalingFactor * scalingFactor * (scorePosition / playerCount), 0.8)) + 7.5;
+        const positionBonus = (-Math.pow(positionScalingFactor * (10.0 / 3.0) * (scorePosition / playerCount), 0.825)) + 7.5;
         const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
+        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow(Math.abs((playerCount / 3.0) - scorePosition / 2.0), 1.45) : 1.0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
-        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.105) * (positionBonus + guessBonus) : overallBonus;
+        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.13165) * (positionBonus + guessBonus) : overallBonus;
 
-        this.rating += overallBonus - Math.max(0, eloScaling - 1);
+        this.rating += Math.round(overallBonus) - (Math.max(0, eloScaling - 1) * positionPenalty);
 
         if (this.rating <= 100)
             this.rating = 100;
@@ -132,27 +130,52 @@ class Player {
         return;
     }
     
-    DetermineReworkRating(scorePosition, playerCount, guessCount, wordDifficulty) {
+    DetermineRatingV3(scorePosition, playerCount, guessCount, wordDifficulty) {
         if (scorePosition <= 0 || playerCount <= 1) {
             return;
         }
 
         if (guessCount >= 7) {
-            this.altRating[CURRENT_SYSTEM + 1] -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
+            this.altRating[2] -= Math.round((7 / wordDifficulty) * Math.pow(guessCount / 3.0, 1.65));
         }
 
-        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / baseRating, 6.95), 1.0), 20.0);
+        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[2] / baseRating, 6.95), 1.0), 20.0);
 
         const scalingFactor = 4.0;
-        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, baseRating / this.altRating[CURRENT_SYSTEM + 1]));
+        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, baseRating / this.altRating[2]));
 
-        const positionBonus = positionScalingFactor * Math.pow((playerCount / (scorePosition * scorePosition)), 0.25);
-        const guessBonus = Math.pow(wordDifficulty / (guessCount * guessCount), 2);
+        const positionBonus = (-Math.pow(positionScalingFactor * scalingFactor * (scorePosition / playerCount), 0.8)) + 7.5;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
 
         let overallBonus = scalingFactor * (positionBonus + guessBonus);
         overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.105) * (positionBonus + guessBonus) : overallBonus;
 
-        this.altRating[CURRENT_SYSTEM + 1] += overallBonus - Math.max(0, eloScaling - 1);
+        this.altRating[2] += overallBonus - Math.max(0, eloScaling - 1);
+
+        if (this.altRating[2] <= 100)
+            this.altRating[2] = 100;
+
+        return;
+    }
+    
+    DetermineReworkRating(scorePosition, playerCount, guessCount, wordDifficulty) {
+        if (scorePosition <= 0 || playerCount <= 1) {
+            return;
+        }
+
+        const eloScaling = Math.min(Math.max(Math.pow(this.altRating[CURRENT_SYSTEM + 1] / 1000.0, 7.0), 1.0), 30.0);
+
+        const scalingFactor = 5.0;
+        const positionScalingFactor = Math.min(6, 4.0 * Math.max(0.85, 1000.0 / this.altRating[CURRENT_SYSTEM + 1]));
+
+        const positionBonus = (-Math.pow(positionScalingFactor * (10.0 / 3.0) * (scorePosition / playerCount), 0.825)) + 7.5;
+        const guessBonus = guessCount < wordDifficulty ? Math.pow(wordDifficulty - guessCount, 0.5) : Math.pow(wordDifficulty - guessCount, 3.0) / 4.0;
+        const positionPenalty = scorePosition > playerCount / 2 ? Math.pow(Math.abs((playerCount / 3.0) - scorePosition / 2.0), 1.45) : 1.0;
+
+        let overallBonus = scalingFactor * (positionBonus + guessBonus);
+        overallBonus = overallBonus <= 0 ? Math.pow(scalingFactor, 1.13165) * (positionBonus + guessBonus) : overallBonus;
+
+        this.altRating[CURRENT_SYSTEM + 1] += Math.round(overallBonus) - (Math.max(0, eloScaling - 1) * positionPenalty);
 
         if (this.altRating[CURRENT_SYSTEM + 1] <= 100)
             this.altRating[CURRENT_SYSTEM + 1] = 100;
@@ -168,6 +191,7 @@ class Player {
         this.rating = newRating;
         this.altRating[0] = newRating;
         this.altRating[1] = newRating;
+        this.altRating[2] = newRating;
         this.altRating[CURRENT_SYSTEM + 1] = newRating;
 
         this.timesTakenFirst = 0;

@@ -4,12 +4,12 @@ const TOTAL_TIME_TABLE = document.getElementById("totalTime");
 function CreateTotalTimeHeld() {
     topRankPlayers.sort((a, b) => b.timeSpentAtPeak - a.timeSpentAtPeak);
 
-    let previousPlayer = "playerName";
+    let previousPlayers = [];
     topRankPlayers.forEach(player => {
-        if (player.name !== previousPlayer)
+        if (!previousPlayers.includes(player.name))
             TOTAL_TIME_TABLE.appendChild(CreateTableElements(player.name, player.timeSpentAtPeak));
 
-        previousPlayer = player.name;
+        previousPlayers.push(player.name);
     });
 }
 
@@ -20,7 +20,7 @@ function CreateTableElements(playerName, timeHeld) {
     player.textContent = playerName;
 
     const timeSpentAtRankOne = document.createElement("td");
-    timeSpentAtRankOne.textContent = timeHeld
+    timeSpentAtRankOne.textContent = timeHeld + " Days"
 
     tableRow.appendChild(player);
     tableRow.appendChild(timeSpentAtRankOne);
